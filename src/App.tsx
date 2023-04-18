@@ -7,12 +7,17 @@ import Background from "./components/Background";
 
 function App(): JSX.Element {
   const [reviewList, setReviewList] = useState<Review[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   return (
     <div className="App">
-      <Background />
       <Header />
-      <ListOfReviews reviewList={reviewList} setReviewList={setReviewList} />
+      <ListOfReviews
+        isLoading={isLoading}
+        setIsLoading={setIsLoading}
+        reviewList={reviewList}
+        setReviewList={setReviewList}
+      />
     </div>
   );
 }
