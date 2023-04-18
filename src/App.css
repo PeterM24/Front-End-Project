@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+body {
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; background-size: cover;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (max-width: 480px) {
+  body {
+    background-image: url(img/background-mobile.jpg)
+  }
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 481px) and (max-width: 1024px) {
+  body {
+    background-image: url(img/background-tablet.jpg)
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background-image: url(img/background-desktop.jpg)
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.App {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+
+.Header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  justify-content: center;
+}
+
+.page-title {
+  text-align: center;
+  padding-top: 85px;
+}
+
+.loading-review-container {
+    padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.loading-review-card {
+  align-content: center;
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 330px;
+  height: 450px;
+  list-style-type: none;
+}
+
+.loading-review-title {
+  background-image: linear-gradient(90deg, #ccc, 0px, rgb(229 229 229 / 90%) 40px, #ccc 80px);
+    background-size: 200%;
+  width: 285px;
+  height: 30px;
+  border-radius: 14px;
+  animation: shimmer 1.7s infinite;
+}
+
+.loading-review-body {
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-image: linear-gradient(90deg, #ccc, 0px, rgb(229 229 229 / 90%) 40px, #ccc 80px);
+  background-size: 200%;
+  width: 285px;
+  height: 360px;
+  margin-top: 15px;
+  border-radius: 14px;
+  animation: shimmer 1.7s infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes shimmer {
+  0% {
+    background-position: 0%;
   }
   to {
-    transform: rotate(360deg);
+    background-position: -100%;
+  }
+}
+
+.list-container {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.list-item {
+  /* border: 1px solid lightgray; */
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 330px;
+  height: 450px;
+  list-style-type: none;
+}
+
+.list-item h3 {
+  padding-bottom: 0px;
+  font-size: 0.9rem;
+}
+
+.list-item p {
+  padding-top: 10px;
+  font-size: 0.7rem;
+}
+
+.list-item h5 {
+  margin: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 0.7rem;
+}
+
+/* loading spin wheel */
+
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }
