@@ -4,13 +4,6 @@ import { Review } from "../interfaces/review.interface";
 import ReviewCard from "./ReviewCard";
 import LoadingReviewCard from "./LoadingReview";
 
-// interface Props {
-//   reviewList: Review[];
-//   setReviewList: React.Dispatch<React.SetStateAction<Array<Review>>>;
-//   isLoading: boolean;
-//   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
-// }
-
 const ListOfReviews = (): JSX.Element => {
   useEffect(() => {
     setIsLoading(true);
