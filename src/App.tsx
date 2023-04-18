@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styles/App.css";
 import Header from "./components/Header";
 import ListOfReviews from "./components/ListReviews";
 import { BrowserRouter, Route, Routes } from "react-router-dom";

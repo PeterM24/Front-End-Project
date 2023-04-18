@@ -1,3 +1,5 @@
+import "../styles/ListReviews.css";
+import "../styles/LoadingDots.css"
 import { useEffect, useState } from "react";
 import { fetchReviews } from "../utils/api";
 import { Review } from "../interfaces/review.interface";
@@ -24,8 +26,6 @@ const ListOfReviews = (): JSX.Element => {
       ) : (
         <ul className="list-container">
           {reviewList.map((review: Review) => {
-            console.log(review);
-            
             return <ReviewCard review={review} />;
           })}
         </ul>

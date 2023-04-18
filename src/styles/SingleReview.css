@@ -1,0 +1,46 @@
+.single-review-container {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.single-review {
+  width: 80%;
+  max-width: 1000px;
+  margin: 115px 0px 0px 0px;
+  padding: 20px;
+
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "img header"
+    "img info"
+    "body body";
+}
+
+.single-review-header {
+  grid-area: header;
+  font-size: 1.8em;
+}
+
+.single-review-image {
+  grid-area: img;
+  padding-right:18px;
+}
+
+.single-review-info {
+  grid-area: info;
+}
+
+.single-review-body {
+  grid-area: body;
+  padding-top: 14px;
+  font-size: 1.2rem;
+  grid-area: body;
+}
