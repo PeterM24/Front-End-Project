@@ -24,6 +24,8 @@ const ListOfReviews = (): JSX.Element => {
       ) : (
         <ul className="list-container">
           {reviewList.map((review: Review) => {
+            console.log(review);
+            
             return <ReviewCard review={review} />;
           })}
         </ul>
