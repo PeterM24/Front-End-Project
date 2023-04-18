@@ -47,7 +47,7 @@
 
 /* Loading dummy Review card */
 .loading-single-review-container {
-    padding: 0px;
+    padding-top: 120px;
     margin: 0px;
     display: flex;
     justify-content: center;
@@ -64,7 +64,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 1000px;
-    height: 450px;
+    height: 650px;
     list-style-type: none;
   }
   
@@ -77,7 +77,7 @@
       #ccc 80px
     );
     background-size: 200%;
-    width: 285px;
+    width: 980px;
     height: 30px;
     border-radius: 14px;
     animation: shimmer 1.7s infinite;
@@ -97,8 +97,8 @@
       #ccc 80px
     );
     background-size: 200%;
-    width: 285px;
-    height: 360px;
+    width: 980px;
+    height: 560px;
     margin-top: 15px;
     border-radius: 14px;
     animation: shimmer 1.7s infinite;

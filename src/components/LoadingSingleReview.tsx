@@ -4,7 +4,7 @@ const LoadingSingleReviewCard = (): JSX.Element => {
       <div className="loading-single-review-card">
         <div className="loading-single-review-title"/>
         <div className="loading-single-review-body">
-          <div className="lds-ellipsis-single">
+          <div className="lds-ellipsis">
             <div></div>
             <div></div>
             <div></div>
