@@ -1,4 +1,4 @@
-import "../styles/VoteButtons.css"
+import "../styles/VoteButtons.css";
 import { useEffect, useState } from "react";
 import { fetchSingleReview, patchVotes } from "../utils/api";
 
@@ -38,26 +38,26 @@ const ReviewVote = ({
 
   return (
     <div className="vote-buttons">
-      {hasVotedUp || hasVotedDown ? (
-        <p>Thank you for your vote!</p>
-      ) : (
-        <p className="vote-header">Was this article interesting?</p>
-      )}
-      {hasVotedUp ? (
-        <button onClick={handleUndo}>Undo</button>
-      ) : (
-        <button className="vote-up" onClick={handleVoteUp} disabled={hasVotedDown}>
-          👍 Vote up!
-        </button>
-      )}
-      {hasVotedDown ? (
-        <button onClick={handleUndo}>Undo</button>
-      ) : (
-        <button className="vote-down" onClick={handleVoteDown} disabled={hasVotedUp}>
-          👎 Vote down!
-        </button>
-      )}
-      <h4 className="vote-msg">Total votes: {votes}</h4>
+      <p className="vote-header">
+        {hasVotedUp || hasVotedDown
+          ? "Vote registered!"
+          : "Was this article interesting?"}
+      </p>
+      <button
+        className="vote-up"
+        onClick={hasVotedUp ? handleUndo : handleVoteUp}
+        disabled={hasVotedDown}
+      >
+        {hasVotedUp ? "↩️ Undo" : "👍 Vote up!"}
+      </button>
+      <button
+        className="vote-down"
+        onClick={hasVotedDown ? handleUndo : handleVoteDown}
+        disabled={hasVotedUp}
+      >
+        {hasVotedDown ? "↩️ Undo" : "👎 Vote down!"}
+      </button>
+      <h4 className="vote-count">Votes: {votes}</h4>
     </div>
   );
 };
