@@ -1,15 +1,10 @@
 import "../styles/VoteButtons.css";
 import { useEffect, useState } from "react";
 import { fetchSingleReview, patchVotes } from "../utils/api";
+import { ReviewVotesProps } from "../interfaces/review.interface";
 
-const ReviewVote = ({
-  votes: initialVotes,
-  review_id,
-}: {
-  votes?: number;
-  review_id?: any;
-}): JSX.Element => {
-  const [votes, setVotes] = useState<number>(initialVotes || 0);
+const ReviewVote = ({ votes, review_id }: ReviewVotesProps): JSX.Element => {
+  const [vote, setVotes] = useState<number>(votes || 0);
   const [hasVotedUp, setHasVotedUp] = useState<boolean>(false);
   const [hasVotedDown, setHasVotedDown] = useState<boolean>(false);
 
@@ -57,7 +52,7 @@ const ReviewVote = ({
       >
         {hasVotedDown ? "↩️ Undo" : "👎 Vote down!"}
       </button>
-      <h4 className="vote-count">Votes: {votes}</h4>
+      <h4 className="vote-count">Votes: {vote}</h4>
     </div>
   );
 };

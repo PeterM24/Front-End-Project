@@ -19,6 +19,7 @@ const SingleReview = (): JSX.Element => {
     fetchSingleReview(review_id).then((response) => {
       setIsLoading(false);
       setSingleReview(response);
+      setDate(new Date(response.created_at).toLocaleString());
     });
   }, []);
 
@@ -36,7 +37,7 @@ const SingleReview = (): JSX.Element => {
               <h3>Game designer: {singleReview?.designer}</h3>
               <br />
               <p>Reviewed by: {singleReview?.owner}</p>
-              <p>Date posted: {singleReview?.created_at}</p>
+              <p>Date posted: {date}</p>
               <br />
             </div>
             <ReviewVote
