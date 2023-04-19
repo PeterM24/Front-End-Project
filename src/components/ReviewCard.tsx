@@ -5,7 +5,7 @@ const ReviewCard = ({ review }: { review: Review }): JSX.Element => {
   const date = new Date(review.created_at).toLocaleString();
 
   return (
-    <li key={review.review_id} className="list-item">
+    <li className="list-item">
       <Link to={`/reviews/${review.review_id}`}>
         <h3 className="list-item-header">{review.title.slice(1, 35)}</h3>
       </Link>
