@@ -47,9 +47,9 @@ const SingleReview = (): JSX.Element => {
             />
 
             <p className="single-review-body">{singleReview?.review_body}</p>
-          </div>
-          <div className="comments-single-review">
-            <CommentsSingleReview />
+            <div className="comments-single-review">
+              <CommentsSingleReview />
+            </div>
           </div>
         </div>
       )}
