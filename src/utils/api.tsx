@@ -20,3 +20,8 @@ export const fetchComments = async (review_id: any): Promise<Comment[]> => {
   const response = await gamesAPI.get(`/reviews/${review_id}/comments`);
   return response.data.comments as Comment[];
 };
+
+export const patchVotes = async (review_id: any): Promise<number> => {
+  const response = await gamesAPI.patch(`/api/reviews/${review_id}`);
+  return response.data.review.votes;
+}
