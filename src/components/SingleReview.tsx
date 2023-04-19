@@ -38,7 +38,6 @@ const SingleReview = (): JSX.Element => {
               <p>Reviewed by: {singleReview?.owner}</p>
               <p>Date posted: {singleReview?.created_at}</p>
               <h5>Comments: {singleReview?.comment_count}</h5>
-              <h5>Votes: {singleReview?.votes}</h5>
               <ReviewVote votes={singleReview?.votes} review_id={singleReview?.review_id} />
             </div>
 
