@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { fetchSingleReview } from "../utils/api";
 import { Review } from "../interfaces/review.interface";
 import LoadingSingleReviewCard from "./LoadingSingleReview";
+import CommentsSingleReview from "./CommentsSingleReview";
 
 const SingleReview = (): JSX.Element => {
   const { review_id } = useParams();
@@ -46,6 +47,9 @@ const SingleReview = (): JSX.Element => {
             />
 
             <p className="single-review-body">{singleReview?.review_body}</p>
+            <div className="comments-single-review">
+              <CommentsSingleReview />
+            </div>
           </div>
         </div>
       )}
