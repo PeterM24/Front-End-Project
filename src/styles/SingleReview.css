@@ -21,7 +21,8 @@
   grid-template-areas:
     "img header"
     "img info"
-    "body body";
+    "body body"
+    "comments comments";
 }
 
 .single-review-header {
@@ -51,21 +52,43 @@
   margin: 0 auto;
 }
 
+.comments-single-review {
+  grid-area: comments;
+  margin-top: 20px;
+  border-top: 1px solid rgb(207, 207, 207);
+}
+
+.individual-comment {
+  padding: 0;
+  margin-bottom: 15px;
+}
+
 .comments-header {
   padding-top: 20px;
 }
 
+.comment-date {
+  color: grey;
+}
+
+.comment-body {
+  padding: 10px;
+  background-color: rgba(229, 229, 229, 0.738);
+  border-radius: 12px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: larger;
+}
+
 .comments-ul {
   list-style-type: none;
-  grid-area: comments;
+  padding: 0;
   display: grid;
   grid-template-columns: ". comment";
   grid-template-rows: auto;
 }
 
-.individual-comment {
-  padding: 10px;
-}
+
 
 /* Loading dummy Review card */
 .loading-single-review-container {
