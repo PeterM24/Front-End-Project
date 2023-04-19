@@ -17,11 +17,11 @@
 
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "img header"
     "img info"
-    "body body";
+    "body body"
 }
 
 .single-review-header {
@@ -43,6 +43,20 @@
   padding-top: 14px;
   font-size: 1.2rem;
   grid-area: body;
+}
+
+/* Comments section */
+
+.comments-ul {
+list-style-type: none;
+grid-area: comments;
+display: grid;
+grid-template-columns: ". comment";
+grid-template-rows: auto;
+}
+
+.individual-comment {
+padding: 10px;
 }
 
 /* Loading dummy Review card */
