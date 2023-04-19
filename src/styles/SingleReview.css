@@ -46,6 +46,10 @@
 }
 
 /* Comments section */
+.lds-ellipsis-dark {
+  display: block;
+  margin: 0 auto;
+}
 
 .comments-ul {
 list-style-type: none;
