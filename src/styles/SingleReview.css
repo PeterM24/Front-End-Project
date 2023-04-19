@@ -162,15 +162,32 @@
   grid-template-areas:
     "voteheader voteheader"
     "voteup votedown"
-    "votemsg votemsg";
+    "votecount votecount";
+}
+
+.vote-up {
+  grid-area: voteup;
+}
+
+.vote-down {
+  grid-area: votedown;
 }
 
 .vote-header {
+  color: rgb(124, 124, 124);
+  /* text-align: center; */
+  font-weight: 500;
+  margin-bottom: -8px;
   grid-area: voteheader;
 }
 
-.vote-msg {
-  grid-area: votemsg;
+.vote-count {
+  margin-top: -8px;
+  font-size: larger;
+  font-weight: 600;
+  /* text-align: center; */
+  color: rgb(124, 124, 124);
+  grid-area: votecount;
 }
 
 @keyframes shimmer {

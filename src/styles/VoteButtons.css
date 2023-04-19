@@ -1,9 +1,6 @@
-/* CSS */
-
+/* VOTE UP */
 
 .vote-up {
-  grid-area: voteup;
-  align-items: center;
   background-color: #ebf4e1;
   border: 1px solid #ebf4e1;
   border-radius: 11px;
@@ -15,31 +12,19 @@
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.vote-up:active,
-.vote-up:hover,
-.vote-up:focus {
-  outline: 0;
-}
-
-.vote-up:active {
-  background-color: #84a958;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-  color: #f3f7f0;
-}
-
 .vote-up:hover {
   background-color: #e2edd5;
   border-color: #80a258;
   color: #627f41;
 }
 
-/* CSS */
+/* VOTE DOWN */
+
 .vote-down {
-  grid-area: votedown;
-  align-items: center;
   background-color: #ffe7e7;
   border: 1px solid #fee0e0;
   border-radius: 11px;
+  height: 50px;
   color: #d33a2c;
   font-weight: 700;
   text-align: center;
@@ -47,27 +32,19 @@
   transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.vote-down:active,
-.vote-down:hover,
-.vote-down:focus {
-  outline: 0;
-}
-
-.vote-down:active {
-  background-color: #d33a2c;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-  color: #ffffff;
-}
-
 .vote-down:hover {
   background-color: #ffe3e3;
   border-color: #faa4a4;
 }
 
-.vote-down:active:hover,
-.vote-down:focus:hover,
-.vote-down:focus {
-  background-color: #d33a2c;
-  box-shadow: rgba(0, 0, 0, 0.12) 0 1px 3px 0 inset;
-  color: #ffffff;
+.vote-down:disabled {
+  background-color: rgb(234, 234, 234);
+  border-color: rgb(185, 185, 185);
+  color: rgb(185, 185, 185);
+}
+
+.vote-up:disabled {
+  background-color: rgb(234, 234, 234);
+  border-color: rgb(185, 185, 185);
+  color: rgb(185, 185, 185);
 }
