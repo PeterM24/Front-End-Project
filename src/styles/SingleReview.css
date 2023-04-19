@@ -17,10 +17,11 @@
 
   display: grid;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto auto auto auto;
   grid-template-areas:
     "img header"
     "img info"
+    "img vote"
     "body body"
     "comments comments";
 }
@@ -148,6 +149,28 @@
   margin-top: 15px;
   border-radius: 14px;
   animation: shimmer 1.7s infinite;
+}
+
+.vote-buttons {
+  grid-area: vote;
+}
+
+.vote-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  grid-template-areas:
+    "voteheader voteheader"
+    "voteup votedown"
+    "votemsg votemsg";
+}
+
+.vote-header {
+  grid-area: voteheader;
+}
+
+.vote-msg {
+  grid-area: votemsg;
 }
 
 @keyframes shimmer {
