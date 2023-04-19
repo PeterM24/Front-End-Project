@@ -6,6 +6,7 @@ import { fetchSingleReview } from "../utils/api";
 import { Review } from "../interfaces/review.interface";
 import LoadingSingleReviewCard from "./LoadingSingleReview";
 import CommentsSingleReview from "./CommentsSingleReview";
+import ReviewVote from "./ReviewVote";
 
 const SingleReview = (): JSX.Element => {
   const { review_id } = useParams();
@@ -38,6 +39,7 @@ const SingleReview = (): JSX.Element => {
               <p>Date posted: {singleReview?.created_at}</p>
               <h5>Comments: {singleReview?.comment_count}</h5>
               <h5>Votes: {singleReview?.votes}</h5>
+              <ReviewVote votes={singleReview?.votes} review_id={singleReview?.review_id} />
             </div>
 
             <img
