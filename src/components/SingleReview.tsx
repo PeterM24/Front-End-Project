@@ -32,14 +32,17 @@ const SingleReview = (): JSX.Element => {
             <h1 className="single-review-header">{singleReview?.title}</h1>
 
             <div className="single-review-info">
-              <h3>CATEGORY: {singleReview?.category.toUpperCase()}</h3>
-              <h3>GAME DESIGNER: {singleReview?.designer.toUpperCase()}</h3>
+              <h3>Category: {singleReview?.category}</h3>
+              <h3>Game designer: {singleReview?.designer}</h3>
               <br />
               <p>Reviewed by: {singleReview?.owner}</p>
               <p>Date posted: {singleReview?.created_at}</p>
-              <h5>Comments: {singleReview?.comment_count}</h5>
-              <ReviewVote votes={singleReview?.votes} review_id={singleReview?.review_id} />
+              <br />
             </div>
+            <ReviewVote
+              votes={singleReview?.votes}
+              review_id={singleReview?.review_id}
+            />
 
             <img
               src={singleReview?.review_img_url}
