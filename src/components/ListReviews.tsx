@@ -1,3 +1,5 @@
+import "../styles/ListReviews.css";
+import "../styles/LoadingDots.css"
 import { useEffect, useState } from "react";
 import { fetchReviews } from "../utils/api";
 import { Review } from "../interfaces/review.interface";

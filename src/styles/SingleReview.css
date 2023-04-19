@@ -1,0 +1,114 @@
+.single-review-container {
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.single-review {
+  width: 80%;
+  max-width: 1000px;
+  margin: 115px 0px 0px 0px;
+  padding: 20px;
+
+  background-color: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+    "img header"
+    "img info"
+    "body body";
+}
+
+.single-review-header {
+  grid-area: header;
+  font-size: 1.8em;
+}
+
+.single-review-image {
+  grid-area: img;
+  padding-right:18px;
+}
+
+.single-review-info {
+  grid-area: info;
+}
+
+.single-review-body {
+  grid-area: body;
+  padding-top: 14px;
+  font-size: 1.2rem;
+  grid-area: body;
+}
+
+/* Loading dummy Review card */
+.loading-single-review-container {
+    padding-top: 120px;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .loading-single-review-card {
+    align-content: center;
+    background-color: white;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+    border-radius: 12px;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 650px;
+    list-style-type: none;
+  }
+  
+  .loading-single-review-title {
+    background-image: linear-gradient(
+      90deg,
+      #ccc,
+      0px,
+      rgb(229 229 229 / 90%) 40px,
+      #ccc 80px
+    );
+    background-size: 200%;
+    width: 980px;
+    height: 30px;
+    border-radius: 14px;
+    animation: shimmer 1.7s infinite;
+  }
+  
+  .loading-single-review-body {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-image: linear-gradient(
+      90deg,
+      #ccc,
+      0px,
+      rgb(229 229 229 / 90%) 40px,
+      #ccc 80px
+    );
+    background-size: 200%;
+    width: 980px;
+    height: 560px;
+    margin-top: 15px;
+    border-radius: 14px;
+    animation: shimmer 1.7s infinite;
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 0%;
+    }
+    to {
+      background-position: -100%;
+    }
+  }

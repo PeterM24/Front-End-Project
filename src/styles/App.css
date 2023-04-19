@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat; background-size: cover;
+}
+
+@media (max-width: 480px) {
+  body {
+    background-image: url(img/background-mobile.jpg)
+  }
+}
+@media (min-width: 481px) and (max-width: 1024px) {
+  body {
+    background-image: url(img/background-tablet.jpg)
+  }
+}
+@media (min-width: 1024px) {
+  body {
+    background-image: url(img/background-desktop.jpg)
+  }
+}
+
+.App {
+  justify-content: center;
+}
+
+
+.Header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  text-align: center;
+  justify-content: center;
+}
+
+.page-title {
+  text-align: center;
+  padding-top: 85px;
+}
