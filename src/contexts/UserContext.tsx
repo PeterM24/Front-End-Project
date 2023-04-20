@@ -8,8 +8,8 @@ import { fetchUserByUsername } from "../utils/api";
 
 const GuestUser = {
   username: "",
-  name: "Guest",
-  avatar_url: "random",
+  name: "",
+  avatar_url: "https://stbannandale.syd.catholic.edu.au/wp-content/uploads/sites/19/2019/09/Person-Icon.jpg",
 };
 
 export const UserContext = createContext<UserContextType>({
