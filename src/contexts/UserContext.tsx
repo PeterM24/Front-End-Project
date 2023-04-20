@@ -13,7 +13,7 @@ export const UserContext = createContext<UserContextType>({
   signIn: () => {},
 });
 
-const UserProvider = ({ children }: UserContextProps) => {
+export const UserProvider = ({ children }: UserContextProps): JSX.Element => {
   const [signedInUser, setSignedInUser] = useState<User | null>(null);
   const [userList, setUserList] = useState<User[]>([]);
 
