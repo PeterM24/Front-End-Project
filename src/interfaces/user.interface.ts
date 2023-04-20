@@ -7,8 +7,7 @@ export interface User {
 }
 
 export interface UserContextType {
-    signedInUser: User | null;
-    users: User[] | null;
+    signedInUser: User;
     signOut: () => void;
     signIn: (username: string) => void;
   }

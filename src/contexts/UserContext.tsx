@@ -4,37 +4,36 @@ import {
   UserContextProps,
   UserContextType,
 } from "../interfaces/user.interface";
-import { fetchAllUsers, fetchUserByUsername } from "../utils/api";
+import { fetchUserByUsername } from "../utils/api";
+
+const GuestUser = {
+  username: "",
+  name: "Guest",
+  avatar_url: "random",
+};
 
 export const UserContext = createContext<UserContextType>({
-  signedInUser: null,
-  users: null,
+  signedInUser: GuestUser,
   signOut: () => {},
   signIn: () => {},
 });
 
+
 export const UserProvider = ({ children }: UserContextProps): JSX.Element => {
-  const [signedInUser, setSignedInUser] = useState<User | null>(null);
-  const [userList, setUserList] = useState<User[]>([]);
+  const [signedInUser, setSignedInUser] = useState<User>(GuestUser);
 
   const signOut = () => {
-    setSignedInUser(null);
+    setSignedInUser(GuestUser);
   };
 
   const signIn = (username: string) => {
     fetchUserByUsername(username).then((response) => setSignedInUser(response));
   };
 
-  const getUsers = () => {
-    fetchAllUsers().then((response) => setUserList(response));
-  };
-
   const value = {
     signedInUser,
-    users: userList,
     signOut,
     signIn,
-    getUsers
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
