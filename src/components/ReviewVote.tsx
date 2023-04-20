@@ -7,34 +7,49 @@ const ReviewVote = ({ votes, review_id }: ReviewVotesProps): JSX.Element => {
   const [vote, setVotes] = useState<number>(votes || 0);
   const [hasVotedUp, setHasVotedUp] = useState<boolean>(false);
   const [hasVotedDown, setHasVotedDown] = useState<boolean>(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleVoteUp = async () => {
     setVotes((prevVotes) => prevVotes + 1);
     setHasVotedUp(true);
-    await patchVotes(review_id, 1);
+    try {
+      await patchVotes(review_id, 1);
+      setErrorMsg("");
+    } catch {
+      setErrorMsg("Something went wrong...");
+    }
   };
 
   const handleVoteDown = async () => {
     setVotes((prevVotes) => prevVotes - 1);
     setHasVotedDown(true);
-    await patchVotes(review_id, -1);
+    try {
+      await patchVotes(review_id, -1);
+      setErrorMsg("");
+    } catch {
+      setErrorMsg("Something went wrong...");
+    }
   };
 
   const handleUndo = async () => {
     if (hasVotedUp) {
       setVotes((prevVotes) => prevVotes - 1);
       setHasVotedUp(false);
+      setErrorMsg("");
     }
     if (hasVotedDown) {
       setVotes((prevVotes) => prevVotes + 1);
       setHasVotedDown(false);
+      setErrorMsg("");
     }
   };
 
   return (
     <div className="vote-buttons">
       <p className="vote-header">
-        {hasVotedUp || hasVotedDown
+        {errorMsg
+          ? errorMsg
+          : hasVotedUp || hasVotedDown
           ? "Vote registered!"
           : "Was this article interesting?"}
       </p>
@@ -43,7 +58,7 @@ const ReviewVote = ({ votes, review_id }: ReviewVotesProps): JSX.Element => {
         onClick={hasVotedUp ? handleUndo : handleVoteUp}
         disabled={hasVotedDown}
       >
-        {hasVotedUp ? "↩️ Undo" : "👍 Vote up!"}
+        {errorMsg ? "Try again" : hasVotedUp ? "↩️ Undo" : "👍 Vote up!"}
       </button>
       <button
         className="vote-down"

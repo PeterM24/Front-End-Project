@@ -89,8 +89,6 @@
   grid-template-rows: auto;
 }
 
-
-
 /* Loading dummy Review card */
 .loading-single-review-container {
   padding-top: 120px;
@@ -151,6 +149,7 @@
   animation: shimmer 1.7s infinite;
 }
 
+/* Voting component */
 .vote-buttons {
   grid-area: vote;
 }
@@ -176,6 +175,7 @@
 .vote-header {
   color: rgb(124, 124, 124);
   /* text-align: center; */
+  font-size: larger;
   font-weight: 500;
   margin-bottom: -8px;
   grid-area: voteheader;
