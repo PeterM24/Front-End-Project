@@ -18,6 +18,7 @@ const ReviewVote = ({ votes, review_id }: ReviewVotesProps): JSX.Element => {
       setErrorVotingUp("");
     } catch {
       setErrorVotingUp("Something went wrong...");
+      setVotes((prevVotes) => prevVotes - 1);
     }
   };
 
@@ -29,17 +30,26 @@ const ReviewVote = ({ votes, review_id }: ReviewVotesProps): JSX.Element => {
       setErrorVotingDown("");
     } catch {
       setErrorVotingDown("Something went wrong...");
+      setVotes((prevVotes) => prevVotes + 1);
     }
   };
 
   const handleUndo = async () => {
-    if (hasVotedUp) {
+    if (!errorVotingUp && hasVotedUp) {
       setVotes((prevVotes) => prevVotes - 1);
       setHasVotedUp(false);
       setErrorVotingUp("");
     }
-    if (hasVotedDown) {
+    if (!errorVotingDown && hasVotedDown) {
       setVotes((prevVotes) => prevVotes + 1);
+      setHasVotedDown(false);
+      setErrorVotingDown("");
+    }
+    if (errorVotingUp) {
+      setHasVotedUp(false);
+      setErrorVotingUp("");
+    }
+    if (errorVotingDown) {
       setHasVotedDown(false);
       setErrorVotingDown("");
     }
@@ -66,7 +76,11 @@ const ReviewVote = ({ votes, review_id }: ReviewVotesProps): JSX.Element => {
         onClick={hasVotedDown ? handleUndo : handleVoteDown}
         disabled={hasVotedUp}
       >
-        {errorVotingDown ? "Try again" : hasVotedDown ? "↩️ Undo" : "👎 Vote down!"}
+        {errorVotingDown
+          ? "Try again"
+          : hasVotedDown
+          ? "↩️ Undo"
+          : "👎 Vote down!"}
       </button>
       <h4 className="vote-count">Votes: {vote}</h4>
     </div>
