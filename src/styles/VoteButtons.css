@@ -39,12 +39,12 @@
 
 .vote-down:disabled {
   background-color: rgb(234, 234, 234);
-  border-color: rgb(185, 185, 185);
+  border-color: rgb(234, 234, 234);
   color: rgb(185, 185, 185);
 }
 
 .vote-up:disabled {
   background-color: rgb(234, 234, 234);
-  border-color: rgb(185, 185, 185);
+  border-color: rgb(234, 234, 234);
   color: rgb(185, 185, 185);
 }
