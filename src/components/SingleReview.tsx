@@ -6,6 +6,7 @@ import { fetchSingleReview } from "../utils/api";
 import { Review } from "../interfaces/review.interface";
 import LoadingSingleReviewCard from "./LoadingSingleReview";
 import CommentsSingleReview from "./CommentsSingleReview";
+import ReviewVote from "./ReviewVote";
 
 const SingleReview = (): JSX.Element => {
   const { review_id } = useParams();
@@ -18,6 +19,7 @@ const SingleReview = (): JSX.Element => {
     fetchSingleReview(review_id).then((response) => {
       setIsLoading(false);
       setSingleReview(response);
+      setDate(new Date(response.created_at).toLocaleString());
     });
   }, []);
 
@@ -31,14 +33,17 @@ const SingleReview = (): JSX.Element => {
             <h1 className="single-review-header">{singleReview?.title}</h1>
 
             <div className="single-review-info">
-              <h3>CATEGORY: {singleReview?.category.toUpperCase()}</h3>
-              <h3>GAME DESIGNER: {singleReview?.designer.toUpperCase()}</h3>
+              <h3>Category: {singleReview?.category}</h3>
+              <h3>Game designer: {singleReview?.designer}</h3>
               <br />
               <p>Reviewed by: {singleReview?.owner}</p>
-              <p>Date posted: {singleReview?.created_at}</p>
-              <h5>Comments: {singleReview?.comment_count}</h5>
-              <h5>Votes: {singleReview?.votes}</h5>
+              <p>Date posted: {date}</p>
+              <br />
             </div>
+            <ReviewVote
+              votes={singleReview?.votes}
+              review_id={singleReview?.review_id}
+            />
 
             <img
               src={singleReview?.review_img_url}

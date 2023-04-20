@@ -10,3 +10,8 @@ export interface Review {
   votes: number;
   comment_count: number;
 }
+
+export interface ReviewVotesProps {
+  votes?: number;
+  review_id?: number;
+}

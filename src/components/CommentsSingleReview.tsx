@@ -31,7 +31,7 @@ const CommentsSingleReview = (): JSX.Element => {
           ) : (
             <ul className="comments-ul">
               {commentList.map((comment) => (
-                <IndividualComment comment={comment} />
+                <IndividualComment key={comment.comment_id} comment={comment} />
               ))}
             </ul>
           )}

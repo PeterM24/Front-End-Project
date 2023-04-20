@@ -6,7 +6,7 @@ const IndividualComment = ({ comment }: { comment: Comment }): JSX.Element => {
 
   return (
     <>
-      <li key={comment.comment_id} className="individual-comment">
+      <li className="individual-comment">
         <h3 className="comment-heading">{comment.author}</h3>
         <p className="comment-date">Posted: {date}</p>
         <p className="comment-body">{comment.body}</p>
