@@ -23,7 +23,7 @@ const CommentsSingleReview = (): JSX.Element => {
   return (
     <>
       <h3 className="comments-header">Comments:</h3>
-      <CommentForm />
+      <CommentForm setCommentList={setCommentList} commentList={commentList} />
       {isLoading ? (
         <LoadingDotsDark />
       ) : (

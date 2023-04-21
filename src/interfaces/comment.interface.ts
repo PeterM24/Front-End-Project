@@ -11,3 +11,8 @@ export interface CommentToPost {
   username: string;
   body: string;
 }
+
+export type SetCommentType = {
+  setCommentList: (newCommentList: Comment[]) => void;
+  commentList: Comment[];
+};

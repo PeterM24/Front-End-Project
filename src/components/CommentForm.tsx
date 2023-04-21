@@ -1,19 +1,26 @@
 import { useContext, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "../contexts/UserContext";
-import { CommentToPost } from "../interfaces/comment.interface";
+import {
+  Comment,
+  CommentToPost,
+  SetCommentType,
+} from "../interfaces/comment.interface";
 import { postComment } from "../utils/api";
+import { ReviewParams } from "../interfaces/review.interface";
 
-type ReviewParams = {
-  review_id: string
-}
-
-const CommentForm = (): JSX.Element => {
+const CommentForm = ({
+  setCommentList,
+  commentList,
+}: SetCommentType): JSX.Element => {
   const { review_id } = useParams<ReviewParams>();
-  const [comment, setComment] = useState<string>("");
-  const [newComment, setNewcomment] = useState<Comment>();
-  const { signedInUser } = useContext(UserContext);
+  const parsedReviewId = review_id ? parseInt(review_id) : 1000;
 
+  const [comment, setComment] = useState<string>("");
+  const { signedInUser } = useContext(UserContext);
+  const [error, setError] = useState<boolean>(false);
+
+  const commentsCopyIfError = [...commentList];
   const commentToPost: CommentToPost = {
     username: signedInUser.username,
     body: comment,
@@ -21,21 +28,39 @@ const CommentForm = (): JSX.Element => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(review_id);
-    
+
     try {
+      const newComment: Comment = {
+        comment_id: Date.now(),
+        body: commentToPost.body,
+        review_id: parsedReviewId,
+        author: commentToPost.username,
+        votes: 0,
+        created_at: new Date().toISOString(),
+      };
+      setCommentList([newComment, ...commentList]);
       await postComment(commentToPost, review_id);
+      setError(false);
       setComment("");
-    } catch (error) {
-      console.error(error);
+    } catch {
+      setCommentList(commentsCopyIfError);
+      setError(true);
     }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} />
-      <button>Submit</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Type your comment here..."
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+        <button>Submit</button>
+      </form>
+      {error ? <p>Something went wrong! Please try again later...</p> : null}
+    </>
   );
 };
 
