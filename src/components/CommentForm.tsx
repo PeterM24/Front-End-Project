@@ -51,6 +51,7 @@ const CommentForm = ({
       setComment("");
     } catch {
       setCommentList(commentsCopyIfError);
+      setIsLoading(false);
       setError(true);
     }
   };
@@ -58,15 +59,16 @@ const CommentForm = ({
   return (
     <>
       <form onSubmit={handleSubmit} className="comment-form">
-        <textarea
+        <input
           className="input-comment"
           placeholder="Type your comment here..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
+          disabled={isLoading}
         />
-        <button className="comment-submit">{submitButtonText}</button>
-      </form>
+        <button disabled={isLoading || !comment.length} className="comment-submit">{submitButtonText}</button>
       {error ? <p>Something went wrong! Please try again later...</p> : null}
+      </form>
     </>
   );
 };
