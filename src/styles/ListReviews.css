@@ -98,6 +98,11 @@
   animation: shimmer 1.7s infinite;
 }
 
+.read-more {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 @keyframes shimmer {
   0% {
     background-position: 0%;

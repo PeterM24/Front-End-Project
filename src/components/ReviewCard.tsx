@@ -7,7 +7,7 @@ const ReviewCard = ({ review }: { review: Review }): JSX.Element => {
   return (
     <li className="list-item">
       <Link to={`/reviews/${review.review_id}`}>
-        <h3 className="list-item-header">{review.title.slice(1, 35)}</h3>
+        <h3 className="list-item-header">{review.title.slice(0, 35)}</h3>
       </Link>
       <h5 className="list-item-designer">{review.designer}</h5>
       <h5 className="list-item-owner">{review.owner}</h5>
@@ -17,8 +17,8 @@ const ReviewCard = ({ review }: { review: Review }): JSX.Element => {
         className="list-item-image"
       />
       <p className="list-item-body">
-        {review.review_body.slice(1, 300)} ...
-        <Link to={`/reviews/${review.review_id}`}>read more</Link>
+        {review.review_body.slice(0, 200)} ...
+        <Link className="read-more" to={`/reviews/${review.review_id}`}>read more</Link>
       </p>
       <p className="list-item-date">Date posted: {date}</p>
     </li>
