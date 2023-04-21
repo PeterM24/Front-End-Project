@@ -1,6 +1,6 @@
 import axios from "axios";
 import { Review } from "../interfaces/review.interface";
-import { Comment } from "../interfaces/comment.interface";
+import { Comment, CommentToPost } from "../interfaces/comment.interface";
 import { User } from "../interfaces/user.interface";
 
 const gamesAPI = axios.create({
@@ -36,3 +36,8 @@ export const fetchAllUsers = async (): Promise<User[]> => {
   const response = await gamesAPI.get("/users");
   return response.data.users;
 };
+
+export const postComment = async (comment: CommentToPost, review_id: string | undefined) => {
+  const response = await gamesAPI.post(`/reviews/${review_id}/comments`, comment);
+  return response.data.comment;
+}

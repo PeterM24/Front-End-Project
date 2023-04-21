@@ -6,24 +6,24 @@ import {
 } from "../interfaces/user.interface";
 import { fetchUserByUsername } from "../utils/api";
 
-const GuestUser = {
-  username: "",
-  name: "",
-  avatar_url: "https://stbannandale.syd.catholic.edu.au/wp-content/uploads/sites/19/2019/09/Person-Icon.jpg",
+const DefaultUser = {
+  username: "jessjelly",
+  name: "Jess Jelly",
+  avatar_url: "https://vignette.wikia.nocookie.net/mrmen/images/4/4f/MR_JELLY_4A.jpg/revision/latest?cb=20180104121141",
 };
 
 export const UserContext = createContext<UserContextType>({
-  signedInUser: GuestUser,
+  signedInUser: DefaultUser,
   signOut: () => {},
   signIn: () => {},
 });
 
 
 export const UserProvider = ({ children }: UserContextProps): JSX.Element => {
-  const [signedInUser, setSignedInUser] = useState<User>(GuestUser);
+  const [signedInUser, setSignedInUser] = useState<User>(DefaultUser);
 
   const signOut = () => {
-    setSignedInUser(GuestUser);
+    setSignedInUser(DefaultUser);
   };
 
   const signIn = (username: string) => {
