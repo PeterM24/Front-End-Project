@@ -149,6 +149,7 @@ textarea:focus, input:focus{
 .comment-submit:hover {
   background-color: #b3e0ef;
   border-color: #286c83;
+  border-left: 1px solid #286c83;
   color: #194e5f;
 }
 
