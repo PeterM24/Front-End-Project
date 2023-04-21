@@ -58,6 +58,7 @@ const CommentForm = ({
 
   return (
     <>
+        {error ? <p className="error-msg-comment">Something went wrong! Please try again later...</p> : null}
       <form onSubmit={handleSubmit} className="comment-form">
         <input
           className="input-comment"
@@ -67,7 +68,6 @@ const CommentForm = ({
           disabled={isLoading}
         />
         <button disabled={isLoading || !comment.length} className="comment-submit">{submitButtonText}</button>
-      {error ? <p>Something went wrong! Please try again later...</p> : null}
       </form>
     </>
   );

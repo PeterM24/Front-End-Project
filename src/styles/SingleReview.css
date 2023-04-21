@@ -53,44 +53,10 @@
   margin: 0 auto;
 }
 
-.comment-form {
-  width:auto;
-  padding-bottom: 20px;
-}
 
-.input-comment {
-  width: 100%;
-  max-width: 960px;
-  border: 1px solid lightgray;
-  background-color: rgba(242, 242, 242, 0.56);
-  border-radius: 12px;
-  padding: 10px;
-}
-
-.comment-submit {
-
-}
-
-.comment-submit {
-  background-color: #ebf4e1;
-  border: 1px solid #ebf4e1;
-  border-radius: 11px;
-  height: 40px;
-  width: 20%;
-  color: #578328;
-  font-weight: 700;
-  text-align: center;
-  text-underline-offset: 1px;
-  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-}
-
-.comment-submit:hover {
-  background-color: #e2edd5;
-  border-color: #80a258;
-  color: #627f41;
-}
 
 .comments-single-review {
+  padding: 30px;
   grid-area: comments;
   margin-top: 20px;
   border-top: 1px solid rgb(207, 207, 207);
@@ -124,6 +90,78 @@
   display: grid;
   grid-template-columns: ". comment";
   grid-template-rows: auto;
+}
+.comment-form {
+  width:auto;
+  padding-bottom: 20px;
+  display: flex;
+}
+
+.input-comment {
+  width: 90%;
+  max-width: 830.99px;
+  max-height: 100px;
+  min-height: 60px;
+  height: 60px;
+  background-color: rgba(229, 229, 229, 0.738);
+  border: 1px solid rgba(215, 214, 214, 0.738);
+  border-right: none;
+  border-radius: 12px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 10px;
+}
+
+  input {
+    -webkit-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196);
+    -moz-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196);
+    box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196), inset 5px 0px 0px 0px transparent;
+    background: transparent;
+  }​
+
+.input-comment::placeholder {
+  color: rgb(179, 179, 179)
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+.comment-submit {
+  position:inherit;
+  right: 0px;
+  background-color: #bbe3f0;
+  border: 1px solid #bbe3f0;
+  border-left: none;
+  border-radius: 11px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  height: 60px;
+  width: 10%;
+  min-width: 75px;
+  color: #286c83;
+  font-weight: 700;
+  text-align: center;
+  text-underline-offset: 1px;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.comment-submit:hover {
+  background-color: #b3e0ef;
+  border-color: #286c83;
+  color: #194e5f;
+}
+
+.comment-submit:disabled {
+  background-color: rgb(227, 227, 227);
+  border: 1px solid rgba(215, 214, 214, 0.738);
+  color: rgb(185, 185, 185);
+}
+
+.error-msg-comment {
+  text-align: center;
+  color: #d33a2c98;
+  margin-top: -25px;
 }
 
 /* Loading dummy Review card */
