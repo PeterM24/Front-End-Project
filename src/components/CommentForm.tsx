@@ -16,20 +16,26 @@ const CommentForm = ({
   const { review_id } = useParams<ReviewParams>();
   const parsedReviewId = review_id ? parseInt(review_id) : 1000;
 
-  const [comment, setComment] = useState<string>("");
   const { signedInUser } = useContext(UserContext);
+
+  const [comment, setComment] = useState<string>("");
   const [error, setError] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const commentsCopyIfError = [...commentList];
+
   const commentToPost: CommentToPost = {
     username: signedInUser.username,
     body: comment,
   };
 
+  const submitButtonText: string = isLoading ? "Submitting" : "Submit";
+
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     try {
+      setIsLoading(true);
       const newComment: Comment = {
         comment_id: Date.now(),
         body: commentToPost.body,
@@ -40,6 +46,7 @@ const CommentForm = ({
       };
       setCommentList([newComment, ...commentList]);
       await postComment(commentToPost, review_id);
+      setIsLoading(false);
       setError(false);
       setComment("");
     } catch {
@@ -57,7 +64,7 @@ const CommentForm = ({
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button>Submit</button>
+        <button>{submitButtonText}</button>
       </form>
       {error ? <p>Something went wrong! Please try again later...</p> : null}
     </>
