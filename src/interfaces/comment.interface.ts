@@ -6,3 +6,13 @@ export interface Comment {
   votes: number;
   created_at: string;
 }
+
+export interface CommentToPost {
+  username: string;
+  body: string;
+}
+
+export type SetCommentType = {
+  setCommentList: (newCommentList: Comment[]) => void;
+  commentList: Comment[];
+};

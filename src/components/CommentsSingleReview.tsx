@@ -5,6 +5,7 @@ import { Comment } from "../interfaces/comment.interface";
 import { fetchComments } from "../utils/api";
 import LoadingDotsDark from "./LoadingDotsDark";
 import IndividualComment from "./IndividualComment";
+import CommentForm from "./CommentForm";
 
 const CommentsSingleReview = (): JSX.Element => {
   const { review_id } = useParams();
@@ -24,12 +25,16 @@ const CommentsSingleReview = (): JSX.Element => {
       <h3 className="comments-header">Comments:</h3>
       {isLoading ? (
         <LoadingDotsDark />
-      ) : (
-        <>
+        ) : (
+          <>
           {commentList.length === 0 ? (
+            <>
             <p>No comments yet...</p>
-          ) : (
-            <ul className="comments-ul">
+            <CommentForm setCommentList={setCommentList} commentList={commentList} />
+            </>
+            ) : (
+              <ul className="comments-ul">
+              <CommentForm setCommentList={setCommentList} commentList={commentList} />
               {commentList.map((comment) => (
                 <IndividualComment key={comment.comment_id} comment={comment} />
               ))}

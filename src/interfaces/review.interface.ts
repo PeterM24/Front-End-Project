@@ -15,3 +15,7 @@ export interface ReviewVotesProps {
   votes?: number;
   review_id?: number;
 }
+
+export type ReviewParams = {
+  review_id: string;
+};
