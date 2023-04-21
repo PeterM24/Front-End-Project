@@ -53,6 +53,43 @@
   margin: 0 auto;
 }
 
+.comment-form {
+  width:auto;
+  padding-bottom: 20px;
+}
+
+.input-comment {
+  width: 100%;
+  max-width: 960px;
+  border: 1px solid lightgray;
+  background-color: rgba(242, 242, 242, 0.56);
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.comment-submit {
+
+}
+
+.comment-submit {
+  background-color: #ebf4e1;
+  border: 1px solid #ebf4e1;
+  border-radius: 11px;
+  height: 40px;
+  width: 20%;
+  color: #578328;
+  font-weight: 700;
+  text-align: center;
+  text-underline-offset: 1px;
+  transition: border 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.comment-submit:hover {
+  background-color: #e2edd5;
+  border-color: #80a258;
+  color: #627f41;
+}
+
 .comments-single-review {
   grid-area: comments;
   margin-top: 20px;

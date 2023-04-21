@@ -57,14 +57,14 @@ const CommentForm = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
+      <form onSubmit={handleSubmit} className="comment-form">
+        <textarea
+          className="input-comment"
           placeholder="Type your comment here..."
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-        <button>{submitButtonText}</button>
+        <button className="comment-submit">{submitButtonText}</button>
       </form>
       {error ? <p>Something went wrong! Please try again later...</p> : null}
     </>

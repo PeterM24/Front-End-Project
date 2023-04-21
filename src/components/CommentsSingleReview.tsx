@@ -23,15 +23,18 @@ const CommentsSingleReview = (): JSX.Element => {
   return (
     <>
       <h3 className="comments-header">Comments:</h3>
-      <CommentForm setCommentList={setCommentList} commentList={commentList} />
       {isLoading ? (
         <LoadingDotsDark />
-      ) : (
-        <>
+        ) : (
+          <>
           {commentList.length === 0 ? (
+            <>
             <p>No comments yet...</p>
-          ) : (
-            <ul className="comments-ul">
+            <CommentForm setCommentList={setCommentList} commentList={commentList} />
+            </>
+            ) : (
+              <ul className="comments-ul">
+              <CommentForm setCommentList={setCommentList} commentList={commentList} />
               {commentList.map((comment) => (
                 <IndividualComment key={comment.comment_id} comment={comment} />
               ))}
