@@ -15,28 +15,66 @@
   border-radius: 12px;
   margin: 20px;
   padding: 20px;
-  display: grid;
-  grid-template-columns: 1;
+  display: flex;
+  flex-wrap:wrap;
   width: 330px;
-  height: 450px;
+  height: 435px;
   list-style-type: none;
 }
 
 .list-item h3 {
+  width: 100%;
   padding-bottom: 0px;
   font-size: 0.9rem;
 }
 
-.list-item p {
-  padding-top: 10px;
-  font-size: 0.7rem;
+.liste-item-link:hover {
+  text-decoration: underline;
+}
+
+.list-item-body {
+  position: relative;
+  height: 56px;
+  padding-top: 3px;
+  font-size: smaller;
 }
 
 .list-item h5 {
+  width: 100%;
   margin: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 0.7rem;
+}
+
+.list-item-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  padding-bottom: 10px;
+}
+
+.user-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-areas: "userimg listuser listdate";
+  align-items: center;
+}
+
+.list-item-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  border: 1px solid rgb(186, 186, 186);
+  grid-area: userimg;
+}
+
+.list-item-owner {
+  grid-area: listuser;
+  padding: 0px;
+  font-size: small;
 }
 
 /* Loading dummy Review card */
