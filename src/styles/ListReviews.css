@@ -93,10 +93,11 @@
   border-radius: 12px;
   margin: 20px;
   padding: 20px;
+  padding-left: 22px;
   display: flex;
   flex-wrap: wrap;
   width: 330px;
-  height: 450px;
+  height: 435px;
   list-style-type: none;
 }
 
@@ -110,7 +111,7 @@
   );
   background-size: 200%;
   width: 285px;
-  height: 30px;
+  height: 260px;
   border-radius: 14px;
   animation: shimmer 1.7s infinite;
 }
@@ -130,8 +131,8 @@
   );
   background-size: 200%;
   width: 285px;
-  height: 360px;
-  margin-top: 15px;
+  height: 115px;
+  margin-top: 20px;
   border-radius: 14px;
   animation: shimmer 1.7s infinite;
 }
