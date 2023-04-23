@@ -9,7 +9,7 @@
   width: 80%;
   max-width: 1000px;
   margin: 115px 0px 0px 0px;
-  padding: 20px;
+  padding: 40px;
   margin-bottom: 150px;
 
   background-color: white;
@@ -34,7 +34,7 @@
 
 .single-review-image {
   grid-area: img;
-  padding-right: 18px;
+  padding-right: 30px;
 }
 
 .single-review-info {
@@ -44,7 +44,8 @@
 
 .single-review-body {
   grid-area: body;
-  padding-top: 14px;
+  padding-top: 30px;
+  padding-bottom: 15px;
   font-size: medium;
   grid-area: body;
 }
@@ -58,7 +59,7 @@
 
 
 .comments-single-review {
-  padding: 30px;
+  /* padding: 0px; */
   grid-area: comments;
   margin-top: 20px;
   border-top: 1px solid rgb(207, 207, 207);
