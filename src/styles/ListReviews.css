@@ -1,10 +1,15 @@
+.list-reviews-page {
+  align-items: center;
+}
+
 /* All reviews ul container */
 .list-container {
-  padding: 0px;
+  padding: 10px;
   margin: 0px;
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  max-width: 1500px;
+  margin: 0 auto;
 }
 
 /* Individual li Review card */
@@ -15,28 +20,66 @@
   border-radius: 12px;
   margin: 20px;
   padding: 20px;
-  display: grid;
-  grid-template-columns: 1;
+  display: flex;
+  flex-wrap:wrap;
   width: 330px;
-  height: 450px;
+  height: 435px;
   list-style-type: none;
 }
 
 .list-item h3 {
+  width: 100%;
   padding-bottom: 0px;
   font-size: 0.9rem;
 }
 
-.list-item p {
-  padding-top: 10px;
-  font-size: 0.7rem;
+.liste-item-link:hover {
+  text-decoration: underline;
+}
+
+.list-item-body {
+  position: relative;
+  height: 56px;
+  padding-top: 3px;
+  font-size: smaller;
 }
 
 .list-item h5 {
+  width: 100%;
   margin: 0px;
   padding-top: 10px;
   padding-bottom: 10px;
   font-size: 0.7rem;
+}
+
+.list-item-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  padding-bottom: 10px;
+}
+
+.user-info {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-areas: "userimg listuser listdate";
+  align-items: center;
+}
+
+.list-item-avatar {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 25px;
+  width: 25px;
+  border: 1px solid rgb(186, 186, 186);
+  grid-area: userimg;
+}
+
+.list-item-owner {
+  grid-area: listuser;
+  padding: 0px;
+  font-size: small;
 }
 
 /* Loading dummy Review card */
@@ -55,10 +98,11 @@
   border-radius: 12px;
   margin: 20px;
   padding: 20px;
+  padding-left: 22px;
   display: flex;
   flex-wrap: wrap;
   width: 330px;
-  height: 450px;
+  height: 435px;
   list-style-type: none;
 }
 
@@ -72,7 +116,7 @@
   );
   background-size: 200%;
   width: 285px;
-  height: 30px;
+  height: 260px;
   border-radius: 14px;
   animation: shimmer 1.7s infinite;
 }
@@ -92,8 +136,8 @@
   );
   background-size: 200%;
   width: 285px;
-  height: 360px;
-  margin-top: 15px;
+  height: 115px;
+  margin-top: 20px;
   border-radius: 14px;
   animation: shimmer 1.7s infinite;
 }

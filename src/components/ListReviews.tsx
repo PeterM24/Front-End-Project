@@ -7,6 +7,9 @@ import ReviewCard from "./ReviewCard";
 import LoadingReviewCard from "./LoadingReview";
 
 const ListOfReviews = (): JSX.Element => {
+  const [reviewList, setReviewList] = useState<Review[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  
   useEffect(() => {
     setIsLoading(true);
     fetchReviews().then((data: Review[]) => {
@@ -15,11 +18,8 @@ const ListOfReviews = (): JSX.Element => {
     });
   }, []);
 
-  const [reviewList, setReviewList] = useState<Review[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-
   return (
-    <div>
+    <div className="list-reviews-page">
       <h2 className="page-title">Latest reviews</h2>
       {isLoading ? (
         <LoadingReviewCard />
