@@ -49,9 +49,3 @@ export const fetchCategories = async (): Promise<Category[]> => {
   const response = await gamesAPI.get('/categories');
   return response.data.categories;
 }
-
-// export const fetchReviewsByCategory = async (category: string): Promise<Review[]> => {
-//   const response = await gamesAPI.get(`/reviews?category=${category}`);
-//   console.log(response.data.reviews);
-//   return response.data.reviews;
-// }
