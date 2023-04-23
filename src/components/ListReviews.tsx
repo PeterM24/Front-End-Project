@@ -6,14 +6,17 @@ import { Review } from "../interfaces/review.interface";
 import ReviewCard from "./ReviewCard";
 import LoadingReviewCard from "./LoadingReview";
 import CategoryDropdown from "./CategoryDropdown";
+import { useParams } from "react-router-dom";
 
 const ListOfReviews = (): JSX.Element => {
   const [reviewList, setReviewList] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const {category} = useParams();
   
   useEffect(() => {
     setIsLoading(true);
-    fetchReviews().then((data: Review[]) => {
+    fetchReviews(category).then((data: Review[]) => {
       setReviewList(data);
       setIsLoading(false);
     });

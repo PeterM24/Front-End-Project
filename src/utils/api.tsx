@@ -8,8 +8,10 @@ const gamesAPI = axios.create({
   baseURL: "https://house-of-games-0co6.onrender.com/api",
 });
 
-export const fetchReviews = async (): Promise<Review[]> => {
-  const response = await gamesAPI.get("/reviews");
+export const fetchReviews = async (category: string | undefined): Promise<Review[]> => {
+  let query = `/reviews`
+  let categoryQuery = `?category=${category}`;
+  const response = await gamesAPI.get(category ? query + categoryQuery : query);
   return response.data.reviews as Review[];
 };
 
@@ -47,3 +49,9 @@ export const fetchCategories = async (): Promise<Category[]> => {
   const response = await gamesAPI.get('/categories');
   return response.data.categories;
 }
+
+// export const fetchReviewsByCategory = async (category: string): Promise<Review[]> => {
+//   const response = await gamesAPI.get(`/reviews?category=${category}`);
+//   console.log(response.data.reviews);
+//   return response.data.reviews;
+// }

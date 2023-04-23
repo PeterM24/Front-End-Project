@@ -13,6 +13,7 @@ function App(): JSX.Element {
         <Routes>
           <Route path="/users" element={<UsersPage />} />
           <Route path="/reviews" element={<ListOfReviews />} />
+          <Route path="/reviews/category/:category" element={<ListOfReviews />}/>
           <Route path="/reviews/:review_id" element={<SingleReview />} />
         </Routes>
       </div>
