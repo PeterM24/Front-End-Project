@@ -11,7 +11,7 @@ function App(): JSX.Element {
       <div className="App">
         <Header />
         <Routes>
-          <Route path="/users" element={<UsersPage />}/>
+          <Route path="/users" element={<UsersPage />} />
           <Route path="/reviews" element={<ListOfReviews />} />
           <Route path="/reviews/:review_id" element={<SingleReview />} />
         </Routes>
