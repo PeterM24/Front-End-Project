@@ -11,7 +11,7 @@ const gamesAPI = axios.create({
 export const fetchReviews = async (category: string | undefined): Promise<Review[]> => {
   let query = `/reviews`
   let categoryQuery = `?category=${category}`;
-  const response = await gamesAPI.get(category ? query + categoryQuery : query);
+  const response = await gamesAPI.get(category && category !== "all" ? query + categoryQuery : query);
   return response.data.reviews as Review[];
 };
 

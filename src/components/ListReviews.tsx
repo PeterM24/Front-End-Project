@@ -1,5 +1,5 @@
 import "../styles/ListReviews.css";
-import "../styles/LoadingDots.css"
+import "../styles/LoadingDots.css";
 import { useEffect, useState } from "react";
 import { fetchReviews } from "../utils/api";
 import { Review } from "../interfaces/review.interface";
@@ -13,31 +13,34 @@ const ListOfReviews = (): JSX.Element => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("");
 
-  const {category} = useParams();
-  console.log(selectedCategory);
-  
+  const { category } = useParams();
 
   useEffect(() => {
     setIsLoading(true);
-    fetchReviews(category).then((data: Review[]) => {
+    fetchReviews(selectedCategory || category).then((data: Review[]) => {
       setReviewList(data);
       setIsLoading(false);
     });
-  }, []);
+  }, [selectedCategory]);
 
   return (
     <div className="list-reviews-page">
       <h2 className="page-title">Latest reviews</h2>
       {isLoading ? (
-        <LoadingReviewCard />
+        <>
+          <CategoryDropdown setSelectedCategory={setSelectedCategory}
+          />
+          <LoadingReviewCard />
+        </>
       ) : (
         <>
-        <CategoryDropdown setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
-        <ul className="list-container">
-          {reviewList.map((review: Review) => {
-            return <ReviewCard review={review} key={review.review_id} />;
-          })}
-        </ul>
+          <CategoryDropdown setSelectedCategory={setSelectedCategory}
+          />
+          <ul className="list-container">
+            {reviewList.map((review: Review) => {
+              return <ReviewCard review={review} key={review.review_id} />;
+            })}
+          </ul>
         </>
       )}
     </div>
