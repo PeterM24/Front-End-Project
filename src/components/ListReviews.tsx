@@ -5,6 +5,7 @@ import { fetchReviews } from "../utils/api";
 import { Review } from "../interfaces/review.interface";
 import ReviewCard from "./ReviewCard";
 import LoadingReviewCard from "./LoadingReview";
+import CategoryDropdown from "./CategoryDropdown";
 
 const ListOfReviews = (): JSX.Element => {
   const [reviewList, setReviewList] = useState<Review[]>([]);
@@ -24,11 +25,14 @@ const ListOfReviews = (): JSX.Element => {
       {isLoading ? (
         <LoadingReviewCard />
       ) : (
+        <>
+        <CategoryDropdown />
         <ul className="list-container">
           {reviewList.map((review: Review) => {
             return <ReviewCard review={review} key={review.review_id} />;
           })}
         </ul>
+        </>
       )}
     </div>
   );
