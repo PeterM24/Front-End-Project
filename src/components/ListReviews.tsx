@@ -19,7 +19,7 @@ const ListOfReviews = (): JSX.Element => {
   }, []);
 
   return (
-    <div>
+    <div className="list-reviews-page">
       <h2 className="page-title">Latest reviews</h2>
       {isLoading ? (
         <LoadingReviewCard />
