@@ -11,9 +11,12 @@ import { useParams } from "react-router-dom";
 const ListOfReviews = (): JSX.Element => {
   const [reviewList, setReviewList] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>("");
 
   const {category} = useParams();
+  console.log(selectedCategory);
   
+
   useEffect(() => {
     setIsLoading(true);
     fetchReviews(category).then((data: Review[]) => {
@@ -29,7 +32,7 @@ const ListOfReviews = (): JSX.Element => {
         <LoadingReviewCard />
       ) : (
         <>
-        <CategoryDropdown />
+        <CategoryDropdown setSelectedCategory={setSelectedCategory} selectedCategory={selectedCategory} />
         <ul className="list-container">
           {reviewList.map((review: Review) => {
             return <ReviewCard review={review} key={review.review_id} />;
