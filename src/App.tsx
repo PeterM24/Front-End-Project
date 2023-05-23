@@ -4,12 +4,14 @@ import ListOfReviews from "./components/ListReviews";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SingleReview from "./components/SingleReview";
 import UsersPage from "./components/UsersPage";
+import Navbar from "./components/Navbar";
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
       <div className="App">
-        <Header />
+        {/* <Header /> */}
+        <Navbar />
         <Routes>
           <Route path="/users" element={<UsersPage />} />
           <Route path="/reviews" element={<ListOfReviews />} />
