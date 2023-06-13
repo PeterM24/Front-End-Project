@@ -27,6 +27,11 @@ header {
   color: white;
 }
 
+.logo-icon {
+  margin-bottom: -2.5px;
+  margin-right: 6px;
+}
+
 nav {
   padding-top: 10px;
   padding-left: 30px;
