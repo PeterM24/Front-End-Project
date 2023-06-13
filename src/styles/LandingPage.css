@@ -1,0 +1,52 @@
+.landing-page {
+  height: 100vh;
+  position: relative;
+}
+
+.landing-page h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: black;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.landing-page button {
+    margin-top: 30px;
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 1.5rem;
+    border: none;
+    background-color: lightgray;
+}
+
+.landing-page button:hover {
+    background-color: #28C278;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1024px) {
+    .landing-page h1 {
+        text-align: center;
+        font-size: 1.5rem;
+        color: black;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .landing-page button {
+        padding: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: 0.8rem;
+        border: none;
+        background-color: lightgray;
+    }
+}
