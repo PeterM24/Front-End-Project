@@ -16,7 +16,6 @@ const CategoryDropdown = ({
   }, []);
 
   return (
-    <div className="category-dropdown">
       <select
         name="categories"
         id="categories"
@@ -34,7 +33,6 @@ const CategoryDropdown = ({
           );
         })}
       </select>
-    </div>
   );
 };
 
