@@ -28,19 +28,19 @@ const ListOfReviews = (): JSX.Element => {
       <h2 className="page-title">Latest reviews</h2>
       {isLoading ? (
         <>
-          <CategoryDropdown setSelectedCategory={setSelectedCategory}
-          />
+          <CategoryDropdown setSelectedCategory={setSelectedCategory} />
           <LoadingReviewCard />
         </>
       ) : (
         <>
-          <CategoryDropdown setSelectedCategory={setSelectedCategory}
-          />
-          <ul className="list-container">
-            {reviewList.map((review: Review) => {
-              return <ReviewCard review={review} key={review.review_id} />;
-            })}
-          </ul>
+          <CategoryDropdown setSelectedCategory={setSelectedCategory} />
+          <div className="list-div">
+            <ul className="list-container">
+              {reviewList.map((review: Review) => {
+                return <ReviewCard review={review} key={review.review_id} />;
+              })}
+            </ul>
+          </div>
         </>
       )}
     </div>
