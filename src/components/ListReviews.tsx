@@ -7,7 +7,7 @@ import ReviewCard from "./ReviewCard";
 import LoadingReviewCard from "./LoadingReview";
 import CategoryDropdown from "./CategoryDropdown";
 import { useParams } from "react-router-dom";
-
+// IoDice
 const ListOfReviews = (): JSX.Element => {
   const [reviewList, setReviewList] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
