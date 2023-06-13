@@ -8,7 +8,11 @@
 }
 
 :root {
-  --mainColor: white;
+  --mainColor: #032C7F;
+}
+
+.main-header{ 
+  color: white;
 }
 
 header {
@@ -16,9 +20,8 @@ header {
   align-items: center;
   height: 60px;
   padding: 0 1rem;
-  background-color: white;
+  background-color: #0f3d93;
   color: black;
-  margin-bottom: 30px;
 }
 
 nav {
@@ -27,12 +30,12 @@ nav {
 
 nav a {
   margin: 0 1rem;
-  color: grey;
+  color: lightgray;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: blue;
+  color: lightblue;
 }
 
 header .nav-btn {
