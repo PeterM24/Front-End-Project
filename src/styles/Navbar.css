@@ -40,7 +40,7 @@ nav a {
 }
 
 nav a:hover {
-  color: blue;
+  color: #f9e836;
 }
 
 header .nav-btn {
@@ -59,8 +59,8 @@ header .nav-btn {
   border-radius: 50%;
   border: 1px solid white;
   position: fixed;
-  top:15px;
-  right:20px;
+  top: 15px;
+  right: 20px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -100,5 +100,9 @@ header .nav-btn {
 
   nav a {
     font-size: 1.5rem;
+  }
+
+  .navbar-user {
+    position: unset;
   }
 }
