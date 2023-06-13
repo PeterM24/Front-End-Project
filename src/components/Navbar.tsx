@@ -10,7 +10,7 @@ const Navbar = (): JSX.Element => {
   const [menuVisible, setMenuVisible] = useState<boolean>(true);
   const navRef = useRef<HTMLElement>(null);
 
-  const showNavBar = () => {
+  const showMenu = () => {
     navRef.current?.classList.toggle("responsive_nav");
     setMenuVisible((current: boolean) => !current);
   };
@@ -22,16 +22,16 @@ const Navbar = (): JSX.Element => {
       </Link>
       <nav ref={navRef}>
         <Link to={`/reviews`}>
-          <a>Reviews</a>
+          <a onClick={() => !menuVisible && showMenu()}>Reviews</a>
+        </Link>
+        <Link to={`/about`}>
+          <a onClick={() => !menuVisible && showMenu()}>About</a>
         </Link>
         <Link to={`/users`}>
-          <a>About</a>
-        </Link>
-        <Link to={`/users`}>
-          <a>Users</a>
+          <a onClick={() => !menuVisible && showMenu()}>Users</a>
         </Link>
         {!menuVisible && (
-          <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+          <button className="nav-btn nav-close-btn" onClick={showMenu}>
             <FaTimes />
           </button>
         )}
@@ -44,7 +44,7 @@ const Navbar = (): JSX.Element => {
         </button>
       </nav>
       {menuVisible && (
-        <button className="nav-btn" onClick={showNavBar}>
+        <button className="nav-btn" onClick={showMenu}>
           <FaBars />
         </button>
       )}
