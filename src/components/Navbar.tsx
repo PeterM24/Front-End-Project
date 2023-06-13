@@ -1,20 +1,18 @@
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import "../styles/Navbar.css";
 import "../styles/App.css";
 import { UserContext } from "../contexts/UserContext";
 
 const Navbar = (): JSX.Element => {
   const { signedInUser, signOut } = useContext(UserContext);
+  const [menuVisible, setMenuVisible] = useState<boolean>(true);
   const navRef = useRef<HTMLElement>(null);
 
   const showNavBar = () => {
     navRef.current?.classList.toggle("responsive_nav");
-  };
-
-  const hideNavbar = () => {
-    navRef.current?.classList.remove("responsive_nav");
+    setMenuVisible((current: boolean) => !current);
   };
 
   return (
@@ -27,14 +25,16 @@ const Navbar = (): JSX.Element => {
           <a>Reviews</a>
         </Link>
         <Link to={`/users`}>
-          <a>Users</a>
-        </Link>
-        <Link to={`/users`}>
           <a>About</a>
         </Link>
-        <button className="nav-btn nav-close-btn" onClick={showNavBar}>
-          <FaTimes />
-        </button>
+        <Link to={`/users`}>
+          <a>Users</a>
+        </Link>
+        {!menuVisible && (
+          <button className="nav-btn nav-close-btn" onClick={showNavBar}>
+            <FaTimes />
+          </button>
+        )}
         <button className="navbar-user">
           <img
             src={signedInUser.avatar_url}
@@ -43,9 +43,11 @@ const Navbar = (): JSX.Element => {
           />
         </button>
       </nav>
-      <button className="nav-btn" onClick={showNavBar}>
-        <FaBars />
-      </button>
+      {menuVisible && (
+        <button className="nav-btn" onClick={showNavBar}>
+          <FaBars />
+        </button>
+      )}
     </header>
   );
 };
