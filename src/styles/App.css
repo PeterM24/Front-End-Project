@@ -51,12 +51,19 @@ a:visited {
 
 .page-title {
   text-align: center;
-  font-size: xx-large;
+  font-size: 2.5rem;
+  font-weight: 500;
   color: white;
   background-color: #f64725;
   background-size: cover;
   height: 250px;
   line-height: 300px;
+}
+
+.subhead-icon {
+  margin-bottom: -7px;
+  margin-right: 10px;
+  width: 60px;
 }
 
 .blob {

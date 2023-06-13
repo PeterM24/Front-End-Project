@@ -6,6 +6,12 @@
     width: 50px;
   }
   
+  .user-signed-in-msg {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 1.5rem;
+  }
+
   .user-list-container {
     padding: 20px;
     margin: 0px;
@@ -18,6 +24,7 @@
     background: linear-gradient(to right, rgb(255, 119, 0), purple);
     border-radius: 50%;
     padding: 4px;
+    cursor: pointer;
   }
   
   .user-list-item {
@@ -39,6 +46,7 @@
   }
   
   .user-box {
+    cursor: pointer;
     border: none;
     border-radius: 12px;
     box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;

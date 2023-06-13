@@ -4,6 +4,7 @@ import { useContext, useRef, useState } from "react";
 import "../styles/Navbar.css";
 import "../styles/App.css";
 import { UserContext } from "../contexts/UserContext";
+import { IoDiceSharp } from "react-icons/io5";
 
 const Navbar = (): JSX.Element => {
   const { signedInUser, signOut } = useContext(UserContext);
@@ -18,7 +19,10 @@ const Navbar = (): JSX.Element => {
   return (
     <header>
       <Link to={`/reviews`}>
-        <h3 className="main-header">HOUSE OF GAMES</h3>
+        <h3 className="main-header">
+          <IoDiceSharp className="logo-icon" />
+          HOUSE OF GAMES
+        </h3>
       </Link>
       <nav ref={navRef}>
         <Link to={`/reviews`}>
@@ -35,6 +39,9 @@ const Navbar = (): JSX.Element => {
             <FaTimes />
           </button>
         )}
+        <Link to={`/users`}>
+          <a className="navbar-username">{signedInUser.username}</a>
+        </Link>
         <button className="navbar-user">
           <img
             src={signedInUser.avatar_url}
