@@ -105,3 +105,19 @@ a:visited {
   80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
   100% { transform: scale(1)   translate(10px, -30px) rotate(0deg); }
 }
+
+
+@media only screen and (max-width: 1024px) {
+  .page-title {
+    font-size: 2rem;
+    font-weight: 400;
+    height: 200px;
+    line-height: 250px;
+  }
+  
+  .subhead-icon {
+    margin-bottom: -5px;
+    margin-right: 10px;
+    width: 35px;
+  }
+}
