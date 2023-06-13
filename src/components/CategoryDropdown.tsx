@@ -3,6 +3,7 @@ import { Category, CategoryType } from "../interfaces/categories.interface";
 import { fetchCategories } from "../utils/api";
 import { snakeToUpperLower } from "../utils/formatText";
 import { Link } from "react-router-dom";
+import "../styles/CategoryDropdown.css"
 
 const CategoryDropdown = ({
   setSelectedCategory,
@@ -20,6 +21,7 @@ const CategoryDropdown = ({
       <select
         name="categories"
         id="categories"
+        className="dropdown"
         onChange={(e) => setSelectedCategory(e.target.value)}
       >
         <option value="all" key="all">
