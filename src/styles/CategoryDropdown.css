@@ -1,14 +1,6 @@
-.category-dropdown {
-  padding: 20px;
-  justify-items: center;
-}
-
 .dropdown {
-  background-color: lightgray;
-  border: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  -o-appearance: none;
-  appearance: none;
+  margin: 20px;
+  padding: 6px;
+  background-color: white;
+  border: lightgray;
 }
