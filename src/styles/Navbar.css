@@ -23,6 +23,10 @@ header {
   color: black;
 }
 
+h3 {
+  color: white;
+}
+
 nav {
   padding-top: 10px;
   padding-left: 30px;
@@ -35,7 +39,7 @@ nav a {
   padding: 0;
   margin: 0 1rem;
   margin-top: -10px;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
@@ -49,7 +53,7 @@ header .nav-btn {
   background: transparent;
   border: none;
   outline: none;
-  color: black;
+  color: white;
   visibility: hidden;
   opacity: 0;
   font-size: 1.8rem;
