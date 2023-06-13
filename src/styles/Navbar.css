@@ -8,38 +8,43 @@
 }
 
 :root {
-  --mainColor: #032C7F;
-}
-
-.main-header{ 
-  color: white;
+  --mainColor: white;
 }
 
 header {
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
+  /* justify-content: center; */
   height: 60px;
-  padding: 0 1rem;
-  background-color: #0f3d93;
+  padding: 0 1.2rem;
+  background-color: #f64725;
   color: black;
 }
 
 nav {
-  margin-left: 3rem;
+  padding-top: 10px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 nav a {
+  padding: 0;
   margin: 0 1rem;
-  color: lightgray;
+  margin-top: -10px;
+  color: black;
   text-decoration: none;
 }
 
 nav a:hover {
-  color: lightblue;
+  color: blue;
 }
 
 header .nav-btn {
-  margin-top: -7px;
+  padding-top: 5px;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -50,10 +55,21 @@ header .nav-btn {
   font-size: 1.8rem;
 }
 
+.navbar-user {
+  border-radius: 50%;
+  border: 1px solid white;
+  position: fixed;
+  top:15px;
+  right:20px;
+}
+
 @media only screen and (max-width: 1024px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
+    position: absolute;
+    top: 5px;
+    right: 15px;
   }
 
   header nav {
@@ -82,9 +98,7 @@ header .nav-btn {
     right: 15px;
   }
 
-  nav a{
+  nav a {
     font-size: 1.5rem;
   }
-
-
 }

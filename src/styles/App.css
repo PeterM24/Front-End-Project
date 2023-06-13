@@ -32,10 +32,11 @@ a:visited {
 }
 
 .rounded-user-img {
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   object-fit: cover;
   border-radius: 50%;
+  border: 2px solid white;
   align-self: left;
 }
 
@@ -50,10 +51,10 @@ a:visited {
 
 .page-title {
   text-align: center;
-  font-size:xx-large;
+  font-size: xx-large;
   color: white;
-  background-image:url(https://armory.visualsoldiers.com/wp-content/uploads/2019/03/Blob-CSS-Tricks-Armory-1.png);
-  background-size:cover;
+  background-color: #f64725;
+  background-size: cover;
   height: 250px;
-  line-height: 250px;
+  line-height: 300px;
 }

@@ -36,7 +36,7 @@
 }
 
 .list-item-body {
-  position: relative;
+  /* position: relative; */
   height: 56px;
   padding-top: 3px;
   font-size: smaller;

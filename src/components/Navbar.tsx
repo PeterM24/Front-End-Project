@@ -1,23 +1,26 @@
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useRef } from "react";
-import "../styles/Navbar.css"
+import { useContext, useRef } from "react";
+import "../styles/Navbar.css";
+import "../styles/App.css";
+import { UserContext } from "../contexts/UserContext";
 
 const Navbar = (): JSX.Element => {
+  const { signedInUser, signOut } = useContext(UserContext);
   const navRef = useRef<HTMLElement>(null);
 
   const showNavBar = () => {
     navRef.current?.classList.toggle("responsive_nav");
   };
 
-  const hideNavbar =()=>{
-    navRef.current?.classList.remove("responsive_nav")
+  const hideNavbar = () => {
+    navRef.current?.classList.remove("responsive_nav");
   };
 
   return (
     <header>
       <Link to={`/reviews`}>
-        <h3 className="main-header">House of Games</h3>
+        <h3 className="main-header">HOUSE OF GAMES</h3>
       </Link>
       <nav ref={navRef}>
         <Link to={`/reviews`}>
@@ -26,8 +29,18 @@ const Navbar = (): JSX.Element => {
         <Link to={`/users`}>
           <a>Users</a>
         </Link>
+        <Link to={`/users`}>
+          <a>About</a>
+        </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes />
+        </button>
+        <button className="navbar-user">
+          <img
+            src={signedInUser.avatar_url}
+            alt="user-img"
+            className="rounded-user-img"
+          />
         </button>
       </nav>
       <button className="nav-btn" onClick={showNavBar}>
