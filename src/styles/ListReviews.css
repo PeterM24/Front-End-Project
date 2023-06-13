@@ -4,12 +4,10 @@
 
 /* All reviews ul container */
 .list-container {
-  padding: 10px;
-  margin: 0px;
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  max-width: 1500px;
-  margin: 0 auto;
+  justify-content: center;
 }
 
 /* Individual li Review card */
@@ -38,7 +36,7 @@
 }
 
 .list-item-body {
-  position: relative;
+  /* position: relative; */
   height: 56px;
   padding-top: 3px;
   font-size: smaller;

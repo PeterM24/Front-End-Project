@@ -2,13 +2,16 @@ import axios from "axios";
 import { Review } from "../interfaces/review.interface";
 import { Comment, CommentToPost } from "../interfaces/comment.interface";
 import { User } from "../interfaces/user.interface";
+import { Category } from "../interfaces/categories.interface";
 
 const gamesAPI = axios.create({
   baseURL: "https://house-of-games-0co6.onrender.com/api",
 });
 
-export const fetchReviews = async (): Promise<Review[]> => {
-  const response = await gamesAPI.get("/reviews");
+export const fetchReviews = async (category: string | undefined): Promise<Review[]> => {
+  let query = `/reviews`
+  let categoryQuery = `?category=${category}`;
+  const response = await gamesAPI.get(category && category !== "all" ? query + categoryQuery : query);
   return response.data.reviews as Review[];
 };
 
@@ -40,4 +43,9 @@ export const fetchAllUsers = async (): Promise<User[]> => {
 export const postComment = async (comment: CommentToPost, review_id: string | undefined) => {
   const response = await gamesAPI.post(`/reviews/${review_id}/comments`, comment);
   return response.data.comment;
+}
+
+export const fetchCategories = async (): Promise<Category[]> => {
+  const response = await gamesAPI.get('/categories');
+  return response.data.categories;
 }

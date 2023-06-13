@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;500;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+:root {
+  --mainColor: white;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  height: 60px;
+  padding: 0 1.2rem;
+  background-color: #f64725;
+  color: black;
+}
+
+nav {
+  padding-top: 10px;
+  padding-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav a {
+  padding: 0;
+  margin: 0 1rem;
+  margin-top: -10px;
+  color: black;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #f9e836;
+}
+
+header .nav-btn {
+  padding-top: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: black;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+.navbar-user {
+  border-radius: 50%;
+  border: 1px solid white;
+  position: fixed;
+  top: 15px;
+  right: 20px;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .nav-btn {
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: white;
+    transition: 0.5s;
+    transform: translateY(-100vh);
+  }
+
+  header .responsive_nav {
+    transform: none;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+  }
+
+  nav a {
+    font-size: 1.5rem;
+  }
+
+  .navbar-user {
+    position: unset;
+  }
+}
