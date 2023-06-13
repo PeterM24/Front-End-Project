@@ -6,6 +6,7 @@ import SingleReview from "./components/SingleReview";
 import UsersPage from "./components/UsersPage";
 import Navbar from "./components/Navbar";
 import Background from "./components/Background";
+import LandingPage from "./components/LandingPage";
 
 function App(): JSX.Element {
   return (
@@ -14,6 +15,7 @@ function App(): JSX.Element {
         <Background />
         <Navbar />
         <Routes>
+          <Route path="/" element={<LandingPage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/reviews" element={<ListOfReviews />} />
           <Route
