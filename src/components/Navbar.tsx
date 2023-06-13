@@ -17,7 +17,7 @@ const Navbar = (): JSX.Element => {
   return (
     <header>
       <Link to={`/reviews`}>
-        <h3>House of Games</h3>
+        <h3 className="main-header">House of Games</h3>
       </Link>
       <nav ref={navRef}>
         <Link to={`/reviews`}>
