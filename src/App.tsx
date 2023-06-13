@@ -5,17 +5,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SingleReview from "./components/SingleReview";
 import UsersPage from "./components/UsersPage";
 import Navbar from "./components/Navbar";
+import Background from "./components/Background";
 
 function App(): JSX.Element {
   return (
     <BrowserRouter>
       <div className="App">
-        {/* <Header /> */}
+        <Background />
         <Navbar />
         <Routes>
           <Route path="/users" element={<UsersPage />} />
           <Route path="/reviews" element={<ListOfReviews />} />
-          <Route path="/reviews/category/:category" element={<ListOfReviews />}/>
+          <Route
+            path="/reviews/category/:category"
+            element={<ListOfReviews />}
+          />
           <Route path="/reviews/:review_id" element={<SingleReview />} />
         </Routes>
       </div>
