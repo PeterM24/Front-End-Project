@@ -8,7 +8,7 @@
 }
 
 :root {
-  --mainColor: white;
+  --mainColor: #f64725;
 }
 
 header {
@@ -53,7 +53,7 @@ nav a:hover {
 }
 
 header .nav-btn {
-  padding-top: 5px;
+  padding-top: 8px;
   cursor: pointer;
   background: transparent;
   border: none;
@@ -91,7 +91,7 @@ header .nav-btn {
   header nav {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     width: 100%;
     display: flex;
@@ -99,8 +99,8 @@ header .nav-btn {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background-color: white;
-    transition: 0.5s;
+    background-color: #f64725;
+    transition: 0.2s;
     transform: translateY(-100vh);
   }
 
@@ -120,5 +120,11 @@ header .nav-btn {
 
   .navbar-user {
     position: unset;
+  }
+
+  .navbar-username {
+    font-size: small;
+    position: unset;
+    margin-top: 100px;
   }
 }
