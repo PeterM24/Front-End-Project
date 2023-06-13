@@ -6,6 +6,12 @@
     width: 50px;
   }
   
+  .user-signed-in-msg {
+    text-align: center;
+    padding-top: 80px;
+    font-size: 1.5rem;
+  }
+
   .user-list-container {
     padding: 20px;
     margin: 0px;
