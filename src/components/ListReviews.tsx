@@ -7,7 +7,8 @@ import ReviewCard from "./ReviewCard";
 import LoadingReviewCard from "./LoadingReview";
 import CategoryDropdown from "./CategoryDropdown";
 import { useParams } from "react-router-dom";
-// IoDice
+import { HiOutlinePuzzlePiece } from "react-icons/hi2";
+
 const ListOfReviews = (): JSX.Element => {
   const [reviewList, setReviewList] = useState<Review[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -25,7 +26,10 @@ const ListOfReviews = (): JSX.Element => {
 
   return (
     <div className="list-reviews-page">
-      <h2 className="page-title">Latest reviews</h2>
+      <h2 className="page-title">
+        <HiOutlinePuzzlePiece className="subhead-icon"/>
+         Latest reviews
+      </h2>
       {isLoading ? (
         <>
           <CategoryDropdown setSelectedCategory={setSelectedCategory} />
