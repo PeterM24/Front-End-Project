@@ -3,10 +3,11 @@ import { fetchAllUsers } from "../utils/api";
 import { User } from "../interfaces/user.interface";
 import "../styles/Users.css";
 import { UserContext } from "../contexts/UserContext";
+import { FiUsers } from "react-icons/fi"
 
 const UsersPage = (): JSX.Element => {
   const [userList, setUserList] = useState<User[]>([]);
-  const {signIn} = useContext(UserContext)
+  const {signIn, signedInUser} = useContext(UserContext)
 
   useEffect(() => {
     fetchAllUsers().then((response) => {
@@ -16,7 +17,8 @@ const UsersPage = (): JSX.Element => {
 
   return (
     <div>
-      <h2 className="page-title">Select your user below</h2>
+      <h2 className="page-title"><FiUsers className="subhead-icon"/>Select your user below</h2>
+      <p className="user-signed-in-msg">You are currently signed in as <b>{signedInUser.name}</b></p>
       <ul className="user-list-container">
         {userList.map((user) => {
           return (
