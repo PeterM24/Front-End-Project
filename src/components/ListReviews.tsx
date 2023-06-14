@@ -27,8 +27,10 @@ const ListOfReviews = (): JSX.Element => {
   return (
     <div className="list-reviews-page">
       <h2 className="page-title">
-        <HiOutlinePuzzlePiece className="subhead-icon"/>
-         {selectedCategory === "all" ? "Latest reviews" : "Latest " + selectedCategory + " reviews"}
+        <HiOutlinePuzzlePiece className="subhead-icon" />
+        {selectedCategory === "all"
+          ? "Latest reviews"
+          : "Latest " + selectedCategory + " reviews"}
       </h2>
       {isLoading ? (
         <>
