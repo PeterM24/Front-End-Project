@@ -56,8 +56,6 @@
   margin: 0 auto;
 }
 
-
-
 .comments-single-review {
   /* padding: 0px; */
   grid-area: comments;
@@ -95,7 +93,7 @@
   grid-template-rows: auto;
 }
 .comment-form {
-  width:auto;
+  width: auto;
   padding-bottom: 20px;
   display: flex;
 }
@@ -115,23 +113,24 @@
   padding: 10px;
 }
 
-  input {
-    -webkit-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196);
-    -moz-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196);
-    box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196), inset 5px 0px 0px 0px transparent;
-    background: transparent;
-  }​
-
-.input-comment::placeholder {
-  color: rgb(179, 179, 179)
+input {
+  -webkit-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196);
+  -moz-box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196);
+  box-shadow: inset -5px 0px 5px -5px rgba(0, 0, 0, 0.196),
+    inset 5px 0px 0px 0px transparent;
+  background: transparent;
+}
+​ .input-comment::placeholder {
+  color: rgb(179, 179, 179);
 }
 
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 
 .comment-submit {
-  position:inherit;
+  position: inherit;
   right: 0px;
   background-color: #bbe3f0;
   border: 1px solid #bbe3f0;
@@ -278,6 +277,15 @@ textarea:focus, input:focus{
   }
 }
 
+@media only screen and (max-width: 1024px) {
+  .single-review {
+    border: none;
+    box-shadow: none;
+    width: 90%;
+    margin: 105px 0px 0px 0px;
+  }
+}
+
 @media only screen and (max-width: 800px) {
   .single-review-body {
     font-size: small;
@@ -287,26 +295,20 @@ textarea:focus, input:focus{
     padding: 0px;
   }
   .comments-single-review {
-    font-size:small;
+    font-size: small;
   }
   .comments-single-review {
-    padding:8px;
+    padding: 8px;
   }
   .comment-body {
     font-size: small;
   }
   .single-review {
     font-size: x-small;
-    width: 80%;
     max-width: 1000px;
-    margin: 115px 0px 0px 0px;
     padding: 20px;
     margin-bottom: 150px;
-  
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-  
+
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto auto auto auto auto;
@@ -317,7 +319,7 @@ textarea:focus, input:focus{
       "body body"
       "vote vote"
       "comments comments";
-      row-gap: 5px;
+    row-gap: 5px;
   }
 }
 
@@ -330,73 +332,43 @@ textarea:focus, input:focus{
     padding: 0px;
   }
   .comments-single-review {
-    font-size:small;
+    font-size: small;
   }
   .comments-single-review {
-    padding:8px;
+    padding: 8px;
   }
   .comment-body {
     font-size: small;
   }
   .single-review {
     font-size: x-small;
-    width: 80%;
-    max-width: 1000px;
-    margin: 115px 0px 0px 0px;
     padding: 20px;
     margin-bottom: 150px;
-  
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-  
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    grid-template-areas:
-      "header header"
-      "img img"
-      "info info"
-      "body body"
-      "vote vote"
-      "comments comments";
-      row-gap: 5px;
   }
 }
 
 @media only screen and (max-width: 1030px) {
-    .single-review-body {
-      font-size: small;
-      margin-top: -20px;
-    }
-    .single-review-image {
-      padding-right: 10px;
-      padding-bottom: 10px;
-    }
-    .comments-single-review {
-      font-size:small;
-    }
-    .comments-single-review {
-      padding:8px;
-    }
-    .comment-body {
-      font-size: small;
-    }
-    .single-review {
-      font-size: x-small;
-      width: 80%;
-      max-width: 1000px;
-      margin: 115px 0px 0px 0px;
-      padding: 20px;
-      margin-bottom: 150px;
-    
-      background-color: white;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      border-radius: 12px;
-    
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      grid-template-rows: auto auto auto auto auto;
+  .single-review-body {
+    font-size: small;
+    margin-top: -20px;
+  }
+  .single-review-image {
+    padding-right: 10px;
+    padding-bottom: 10px;
+  }
+  .comments-single-review {
+    font-size: small;
+  }
+  .comments-single-review {
+    padding: 8px;
+  }
+  .comment-body {
+    font-size: small;
+  }
+  .single-review {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas:
       "img header"
       "img info"
@@ -404,11 +376,10 @@ textarea:focus, input:focus{
       "body body"
       "comments comments";
   }
-} 
+}
 
 @media only screen and (max-width: 1165px) {
   .single-review {
     font-size: smaller;
   }
-
 }
