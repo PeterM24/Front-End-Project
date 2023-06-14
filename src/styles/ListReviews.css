@@ -9,6 +9,8 @@
   flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 150px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 /* Individual li Review card */
