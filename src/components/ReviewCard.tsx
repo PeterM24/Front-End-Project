@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { fetchAllUsers } from "../utils/api";
 
 const ReviewCard = ({ review }: { review: Review }): JSX.Element => {
-  const date = new Date(review.created_at).toLocaleString().split(',');
+  const date = new Date(review.created_at).toLocaleString().split(",");
 
   const [userList, setUserList] = useState<User[]>([]);
   useEffect(() => {
@@ -20,11 +20,13 @@ const ReviewCard = ({ review }: { review: Review }): JSX.Element => {
 
   return (
     <li className="list-item">
+      <Link className="liste-item-link" to={`/reviews/${review.review_id}`}>
         <img
           src={review.review_img_url}
           alt={`image for ${review.title}`}
           className="list-item-image"
         />
+      </Link>
       <Link className="liste-item-link" to={`/reviews/${review.review_id}`}>
         <h3 className="list-item-header">
           {review.title.length > 40
@@ -38,11 +40,13 @@ const ReviewCard = ({ review }: { review: Review }): JSX.Element => {
           alt="user-icon"
           className="list-item-avatar"
         />
-        <p className="list-item-owner"><b>{review.owner}</b> {date[0]}</p>
+        <p className="list-item-owner">
+          <b>{review.owner}</b> {date[0]}
+        </p>
       </div>
 
       <p className="list-item-body">
-        {review.review_body.slice(0, 120)} ... 
+        {review.review_body.slice(0, 120)} ...
         <Link className="read-more" to={`/reviews/${review.review_id}`}>
           see more
         </Link>

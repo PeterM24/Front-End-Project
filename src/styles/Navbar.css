@@ -21,6 +21,7 @@ header {
   padding: 0 1.2rem;
   background-color: #f64725;
   color: black;
+  z-index: 999;
 }
 
 .main-header {
