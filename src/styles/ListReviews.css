@@ -8,6 +8,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 0;
 }
 
 /* Individual li Review card */

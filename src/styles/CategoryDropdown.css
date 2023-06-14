@@ -1,6 +1,8 @@
 .dropdown {
   margin: 20px;
+  margin-bottom: 0px;
   padding: 6px;
   background-color: white;
   border: lightgray;
+  border-radius: 15px;
 }
