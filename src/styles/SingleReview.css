@@ -123,8 +123,7 @@ input {
     inset 5px 0px 0px 0px transparent;
   background: transparent;
 }
-​
-.input-comment::placeholder {
+​ .input-comment::placeholder {
   color: rgb(179, 179, 179);
 }
 
@@ -153,6 +152,7 @@ input:focus {
 }
 
 .comment-submit:hover {
+  cursor: pointer;
   background-color: #b3e0ef;
   border-color: #286c83;
   border-left: 1px solid #286c83;
@@ -160,6 +160,7 @@ input:focus {
 }
 
 .comment-submit:disabled {
+  cursor: not-allowed;
   background-color: rgb(227, 227, 227);
   border: 1px solid rgba(215, 214, 214, 0.738);
   color: rgb(185, 185, 185);
