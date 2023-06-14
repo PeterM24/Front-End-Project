@@ -8,7 +8,6 @@ import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
-import Footer from "./components/Footer";
 
 function App(): JSX.Element {
   return (
@@ -27,7 +26,6 @@ function App(): JSX.Element {
           />
           <Route path="/reviews/:review_id" element={<SingleReview />} />
         </Routes>
-        <Footer />
       </div>
     </BrowserRouter>
   );

@@ -17,20 +17,22 @@ header {
   display: flex;
   align-items: center;
   /* justify-content: center; */
-  height: 60px;
-  padding: 0 1.2rem;
+  height: 55px;
+  padding: 4px 0px 0px 15px;
   background-color: #f64725;
   color: black;
   z-index: 999;
+  font-size: 0.95rem;
 }
 
 .main-header {
   color: white;
 }
 
-.logo-icon {
+header .logo-icon {
   margin-bottom: -2.5px;
   margin-right: 6px;
+  width: 0.95rem;
 }
 
 nav {
@@ -43,8 +45,8 @@ nav {
 
 nav a {
   padding: 0;
-  margin: 0 1rem;
-  margin-top: -10px;
+  margin: 0 0.7rem;
+  margin-top: -11px;
   color: white;
   text-decoration: none;
 }
@@ -62,7 +64,7 @@ header .nav-btn {
   color: white;
   visibility: hidden;
   opacity: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .navbar-user {
@@ -72,6 +74,11 @@ header .nav-btn {
   top: 15px;
   right: 20px;
   cursor: pointer;
+}
+
+header .rounded-user-img {
+  width: 25px;
+  height: 25px;
 }
 
 .navbar-username {
