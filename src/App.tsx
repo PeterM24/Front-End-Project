@@ -7,6 +7,7 @@ import UsersPage from "./components/UsersPage";
 import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import LandingPage from "./components/LandingPage";
+import About from "./components/About";
 
 function App(): JSX.Element {
   return (
@@ -16,6 +17,7 @@ function App(): JSX.Element {
         <Navbar />
         <Routes>
           <Route path="/" element={<LandingPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/reviews" element={<ListOfReviews />} />
           <Route
