@@ -67,13 +67,19 @@ a:visited {
   width: 60px;
 }
 
+.blobs-container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  overflow: hidden;
+  z-index: -1;
+}
+
 .blob {
-  position: absolute;
   top: 0;
   left: 0;
   fill: #F9E836;
   width: 50vmax;
-  z-index: -1;
   animation: move-clockwise 20s ease-in-out infinite;
   transform-origin: 50% 50%;
 }
@@ -93,17 +99,16 @@ a:visited {
   left: 0;
   fill: #28C278;
   width: 20vmax;
-  z-index: -1;
   animation: move-counterclockwise 35s ease-in-out infinite;
   transform-origin: 80% 30%;
 }
 
 @keyframes move-counterclockwise {
   0%   { transform: scale(1)   translate(10px, -30px) rotate(0deg); }
-  38%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(-160deg); }
-  40%  { transform: scale(0.8, 1) translate(80vw, 30vh) rotate(-160deg); }
-  78%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
-  80%  { transform: scale(1.3) translate(0vw, 50vh) rotate(-20deg); }
+  38%  { transform: scale(0.8, 1) translate(75vw, 30vh) rotate(-160deg); }
+  40%  { transform: scale(0.8, 1) translate(75vw, 30vh) rotate(-160deg); }
+  78%  { transform: scale(1) translate(0vw, 50vh) rotate(-20deg); }
+  80%  { transform: scale(1) translate(0vw, 50vh) rotate(-20deg); }
   100% { transform: scale(1)   translate(10px, -30px) rotate(0deg); }
 }
 
