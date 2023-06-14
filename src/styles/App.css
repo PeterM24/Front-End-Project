@@ -1,6 +1,5 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
 }
 
 a {
@@ -29,6 +28,7 @@ a:visited {
 } */
 
 .App {
+  min-height: calc(100vh - 100px);
   justify-content: center;
 }
 
