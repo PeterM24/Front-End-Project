@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import Header from "./components/Header";
+import "./index.css"
 import ListOfReviews from "./components/ListReviews";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SingleReview from "./components/SingleReview";
@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Background from "./components/Background";
 import LandingPage from "./components/LandingPage";
 import About from "./components/About";
+import Footer from "./components/Footer";
 
 function App(): JSX.Element {
   return (
@@ -26,6 +27,7 @@ function App(): JSX.Element {
           />
           <Route path="/reviews/:review_id" element={<SingleReview />} />
         </Routes>
+        <Footer />
       </div>
     </BrowserRouter>
   );
