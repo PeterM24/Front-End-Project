@@ -15,7 +15,6 @@
   .user-list-container {
     padding: 20px;
     margin: 0px;
-    height: 90vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -65,4 +64,9 @@
   .username {
     padding-top: 10px;
     font-weight: 600;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
   }
