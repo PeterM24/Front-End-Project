@@ -87,6 +87,19 @@ header .rounded-user-img {
   right: 50px;
 }
 
+.menu-username {
+  font-size: 1rem;
+  margin-top: -20px;
+}
+
+.switch-user {
+  visibility: hidden;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 10px 5px 10px ;
+  background-color: white;
+}
+
 @media only screen and (max-width: 1024px) {
   header .nav-btn {
     visibility: visible;
@@ -97,6 +110,8 @@ header .rounded-user-img {
   }
 
   header nav {
+    padding-top: 0px;
+    padding-left: 0px;
     position: fixed;
     top: 0;
     right: 0;
@@ -114,6 +129,12 @@ header .rounded-user-img {
 
   header .responsive_nav {
     transform: none;
+    .navbar-username {
+      visibility: hidden;
+    }
+    .switch-user {
+      visibility: visible;
+    }
   }
 
   nav .nav-close-btn {
