@@ -90,6 +90,7 @@ header .rounded-user-img {
 .menu-username {
   font-size: 1rem;
   margin-top: -20px;
+  visibility: hidden;
 }
 
 .switch-user {
@@ -133,6 +134,9 @@ header .rounded-user-img {
       visibility: hidden;
     }
     .switch-user {
+      visibility: visible;
+    }
+    .menu-username {
       visibility: visible;
     }
   }
