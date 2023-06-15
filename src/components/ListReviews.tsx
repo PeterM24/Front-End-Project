@@ -32,7 +32,7 @@ const ListOfReviews = (): JSX.Element => {
           ? "Latest reviews"
           : "Latest " + selectedCategory + " reviews"}
       </h2>
-      {isLoading ? (
+      {!isLoading ? (
         <>
           <CategoryDropdown setSelectedCategory={setSelectedCategory} />
           <LoadingReviewCard />

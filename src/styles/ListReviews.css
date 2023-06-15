@@ -153,3 +153,21 @@
     background-position: -100%;
   }
 }
+
+@media only screen and (max-width: 1024px) {
+  .list-item {
+    margin: 10px;
+  }
+
+  .list-container {
+    margin-top: 10px;
+  }
+
+  .loading-review-card {
+    margin: 10px;
+  }
+
+  .loading-review-container {
+    margin-top: 10px;
+  }
+}
