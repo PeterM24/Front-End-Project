@@ -7,16 +7,21 @@ import { Review } from "../interfaces/review.interface";
 import LoadingSingleReviewCard from "./LoadingSingleReview";
 import CommentsSingleReview from "./CommentsSingleReview";
 import ReviewVote from "./ReviewVote";
+import React from "react";
 
 const SingleReview = (): JSX.Element => {
   const { review_id } = useParams();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [singleReview, setSingleReview] = useState<Review>();
   const [date, setDate] = useState<string>("");
+  const [reviewBody, setReviewBody] = useState<string[]>([]);
 
   useEffect(() => {
     setIsLoading(true);
     fetchSingleReview(review_id).then((response) => {
+      setReviewBody(response.review_body.split("\n"));
+      console.log(reviewBody);
+
       setIsLoading(false);
       setSingleReview(response);
       setDate(new Date(response.created_at).toLocaleString());
@@ -51,7 +56,14 @@ const SingleReview = (): JSX.Element => {
               className="single-review-image"
             />
 
-            <p className="single-review-body">{singleReview?.review_body}</p>
+            <p className="single-review-body">
+              {reviewBody?.map((paragraph: string, index: number) => (
+                <React.Fragment key={index}>
+                  {paragraph}
+                  <br />
+                </React.Fragment>
+              ))}
+            </p>
             <div className="comments-single-review">
               <CommentsSingleReview />
             </div>
