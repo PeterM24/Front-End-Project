@@ -49,6 +49,14 @@ const Navbar = (): JSX.Element => {
             className="rounded-user-img"
           />
         </button>
+        <Link to={`/users`}>
+          <a className="menu-username">{signedInUser.username}</a>
+        </Link>
+        <button className="switch-user" onClick={showMenu}>
+        <Link to={`/users`}>
+          Switch user
+        </Link>
+        </button>
       </nav>
       {menuVisible && (
         <button className="nav-btn" onClick={showMenu}>
