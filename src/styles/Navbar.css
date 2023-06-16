@@ -99,6 +99,7 @@ header .rounded-user-img {
   border-radius: 12px;
   padding: 5px 10px 5px 10px ;
   background-color: white;
+  color: black;
 }
 
 @media only screen and (max-width: 1024px) {
