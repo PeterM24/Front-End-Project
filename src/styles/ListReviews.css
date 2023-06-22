@@ -4,12 +4,13 @@
 
 /* All reviews ul container */
 .list-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
+  width: min(100% - 30px, 1500px);
   gap: 25px;
-  max-width: 1400px;
-  margin: 0 auto;
+  margin-inline: auto;
 }
 
 
@@ -151,9 +152,6 @@
 }
 
 @media only screen and (max-width: 1024px) {
-  .list-item {
-    margin: 10px;
-  }
 
   .list-container {
     margin-top: 10px;
