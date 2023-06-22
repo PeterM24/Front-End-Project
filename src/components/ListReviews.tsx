@@ -40,13 +40,13 @@ const ListOfReviews = (): JSX.Element => {
       ) : (
         <>
           <CategoryDropdown setSelectedCategory={setSelectedCategory} />
-          <div className="list-div">
+          {/* <div className="list-div"> */}
             <ul className="list-container">
               {reviewList.map((review: Review) => {
                 return <ReviewCard review={review} key={review.review_id} />;
               })}
             </ul>
-          </div>
+          {/* </div> */}
         </>
       )}
     </div>

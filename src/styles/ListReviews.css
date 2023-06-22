@@ -4,23 +4,22 @@
 
 /* All reviews ul container */
 .list-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   justify-content: center;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 40px;
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
 
 /* Individual li Review card */
 .list-item {
   background-color: white;
   border-radius: 12px;
-  margin: 20px;
   padding: 20px;
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   width: 330px;
   height: 435px;
   list-style-type: none;
