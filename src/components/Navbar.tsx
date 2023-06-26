@@ -40,15 +40,17 @@ const Navbar = (): JSX.Element => {
           </button>
         )}
         <Link to={`/users`}>
-          <a className="navbar-username">{signedInUser.username}</a>
+          <a className="navbar-username" onClick={showMenu}>{signedInUser.username}</a>
         </Link>
-        <button className="navbar-user">
+        <Link to={`/users`} style={{background: "none"}}>
+        <button className="navbar-user" onClick={showMenu}>
           <img
             src={signedInUser.avatar_url}
             alt="user-img"
             className="rounded-user-img"
           />
         </button>
+        </Link>
         <Link to={`/users`}>
           <a className="menu-username">{signedInUser.username}</a>
         </Link>
