@@ -89,17 +89,13 @@ header .rounded-user-img {
 
 .menu-username {
   font-size: 1rem;
+  font-weight: 300;
   margin-top: -20px;
   visibility: hidden;
 }
 
 .switch-user {
   visibility: hidden;
-  border: none;
-  border-radius: 12px;
-  padding: 5px 10px 5px 10px ;
-  background-color: white;
-  color: black;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -110,7 +106,7 @@ header .rounded-user-img {
     top: 5px;
     right: 15px;
   }
-
+  
   header nav {
     padding-top: 0px;
     padding-left: 0px;
@@ -128,20 +124,33 @@ header .rounded-user-img {
     transition: 0.2s;
     transform: translateY(-100vh);
   }
-
+  
   header .responsive_nav {
     transform: none;
-    .navbar-username {
-      visibility: hidden;
-    }
-    .switch-user {
-      visibility: visible;
-    }
-    .menu-username {
-      visibility: visible;
-    }
+  }
+  .menu-username {
+    visibility: visible;
   }
 
+  .navbar-username {
+    visibility: hidden;
+  }
+
+  .switch-user {
+    visibility: visible;
+    border: none;
+    border-radius: 12px;
+    padding: 5px 10px 5px 10px ;
+    background-color: white;
+    color: black;
+  }
+
+  .switch-user:hover {
+    color: white;
+    cursor: pointer;
+    background-color: gray;
+  }
+  
   nav .nav-close-btn {
     position: absolute;
     top: 5px;
