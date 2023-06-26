@@ -52,13 +52,13 @@ const Navbar = (): JSX.Element => {
         </button>
         </Link>
         <Link to={`/users`}>
-          <a className="menu-username">{signedInUser.username}</a>
+          <a className="menu-username">Signed in as <b>{signedInUser.username}</b></a>
         </Link>
-        <button className="switch-user" onClick={showMenu}>
         <Link to={`/users`}>
+        <button className="switch-user" onClick={showMenu}>
           Switch user
-        </Link>
         </button>
+        </Link>
       </nav>
       {menuVisible && (
         <button className="nav-btn" onClick={showMenu}>
